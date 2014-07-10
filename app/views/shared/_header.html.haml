@@ -1,0 +1,14 @@
+.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+  .container
+    .inner
+      .masthead-brand
+        = link_to root_path do 
+          = image_tag "favicon.png"
+          %h3 小說王
+      %ul.nav.masthead-nav
+        %li.index-nav
+          = link_to "首頁", root_path
+        / %li
+        /   %a{:href => "#"} 粉絲頁
+        %li.apply-nav
+          = link_to "我要投稿",apply_writer_path

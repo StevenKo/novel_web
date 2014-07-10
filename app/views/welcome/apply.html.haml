@@ -1,0 +1,24 @@
+= render 'shared/header'
+
+.jumbotron.col-centered.narrow
+  %h2.text-primary 申請成為小說王作家
+  %p.lead 讓網路作家們的作品能給更多的讀者看到與分享
+  %p
+    有許人懷抱著作家的夢，但作品沒有流傳的管道; 小說王希望打造一個平台，誠摯邀請你來成為我們的簽約作家
+  %p
+    = form_for "", url: apply_writer_path,:html => {:class => "form-horizontal", multipart: true} do |f|
+      .form-group
+        %label.col-sm-2.control-label{:for => "inputEmail3"} Email
+        .col-sm-10
+          = f.number_field(:mount, class: "form-control", :step => 'any')
+    %form.form-horizontal{:role => "form"}
+      .form-group
+        %label.col-sm-2.control-label{:for => "inputEmail3"} Email
+        .col-sm-10
+          %input#inputEmail3.form-control{:placeholder => "Email", :type => "email"}
+      .form-group
+        %label.col-sm-2.control-label{:for => "inputPassword3"} Password
+        .col-sm-10
+          %input#inputPassword3.form-control{:placeholder => "Password", :type => "password"}
+      .form-group
+        %button.btn.btn-default{:type => "submit"} Sign in
