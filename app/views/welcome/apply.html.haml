@@ -6,12 +6,13 @@
   %p
     有許人懷抱著作家的夢，但作品沒有流傳的管道; 小說王希望打造一個平台，誠摯邀請你來成為我們的簽約作家
   %p
-    - flash.each do |name, msg|
-      - if msg.is_a?(String)
-        %div{class: "alert alert-#{name == :notice ? "success" : "error"}"}
-          %a.close{"data-dismiss" => "alert"} ×
-          = content_tag :div, msg, :id => "flash_#{name}"
     = form_for @writer, url: apply_writer_path,:html => {:class => "form-horizontal", multipart: true} do |f|
+      - if @writer.errors.any?
+        #error_explanation
+          %h3.text-danger 無法寄出訊息，請檢查以下錯誤:
+          %ul
+            - @writer.errors.full_messages.each do |msg|
+              %li.text-danger= msg
       .form-group
         %label.col-sm-2.control-label{:for => "inputEmail3"} Email
         .col-sm-10
