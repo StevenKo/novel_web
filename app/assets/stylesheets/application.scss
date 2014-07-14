@@ -21,6 +21,7 @@
 body {
   padding-top: 50px;
   padding-bottom: 20px;
+  position: relative;
 }
 
 
@@ -97,15 +98,6 @@ a:hover {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
-
 
 /*
  * Cover
@@ -134,35 +126,19 @@ a:hover {
  * Affix and center
  */
 
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+@media (max-width: 768px) {
+  .jumbotron.narrow img{
+    margin-top: 10px;
   }
 }
 
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
+.masthead-brand {
+  float: left;
 }
+.masthead-nav {
+  float: right;
+}
+
 
 
 .marketing .col-lg-4 {
@@ -182,9 +158,19 @@ a:hover {
     margin: 30px auto;
 }
 
+.center-div{
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
 .jumbotron.narrow {
-  width: 730px;
+  width: 80%;
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
   border-radius: 6px;
+}
+
+.img-responsive{
+  display: inline-block;
 }

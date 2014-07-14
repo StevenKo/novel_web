@@ -2,10 +2,12 @@
   <title>小說王 —— 手機看小說|手機小說閱讀器|小說APP|手機小說下載|小說應用</title>
 
 = render 'shared/header'
-
-.jumbotron.col-centered.narrow
-  %h2 小說王，好用的小說閱讀器
-  = image_tag "app_index.png"
+.center-div
+  = image_tag "demo.png", class: 'img-responsive'
+  %h3 小說王 : 最適合你的小說閱讀器
+  .jumbotron.col-centered.narrow
+    = image_tag "badge_android.png"
+    = image_tag "badge_ios.png"
 .container.marketing
   / Example row of columns
   .row
