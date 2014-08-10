@@ -15,11 +15,11 @@
 /log/*.log
 /tmp
 
-/config/database.yml
+* /config/database.yml
 /config/deploy.rb
 /config/deploy/*
 dump.rdb
 
 
 # Ignore application configuration
-/config/application.yml
+* /config/application.yml
