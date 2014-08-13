@@ -5,5 +5,5 @@ development:
   host: 127.0.0.1
   encoding: utf8
   username: root
-  password: "db"
+  password: root
   pool: 50

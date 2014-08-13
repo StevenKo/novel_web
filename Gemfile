@@ -26,7 +26,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
+# tool to parse CSS and add vendor prefixes to CSS rules using values
+gem "autoprefixer-rails"
+# Add Livereload
+gem 'guard-livereload', '~> 2.3.0'
 
 group :development,:test do
   gem 'pry'
