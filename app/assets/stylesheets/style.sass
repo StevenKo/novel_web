@@ -1,35 +1,123 @@
-@import           url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic)
+@import           url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css)
 
-$font-color       : #555
-$font-family      : 'Noto Sans', sans-serif
+$blue             : #1AB6E9
+$yellow           : #F6B825
+$footer-bg        : #202021
+$bg-color         : darken(#fff, 2%)
+$screen-md        : "only screen and (max-width : 992px)"
+
+body,
+html
+	height: 100%
+	min-height: 100%
 
 body
-	font-family : $font-family
 	padding: 0
+	background-color: $bg-color
 
-a
-	color: $font-color
+#page
+	min-height: 100%
+	background-color: $bg-color
+	position: relative
+	z-index: 1
+	.page_header
+		background-color: $blue
+		color: #ffffff
+		padding: 20px 0
+		margin-bottom: 20px
 
 #header 
-	background-color: #fff
 	border: none
 	border-radius:  0
 	margin-bottom: 0
 
-.masthead-brand
-	margin: 0
-	h1
-		text-indent: -9999px
-		height: 50px
-		line-height: 50px
-		margin: 0
-		padding: 0
-		background: url(logo.svg) center center no-repeat
+#home-banner
+	background: url(bg.jpg) center center no-repeat
+	background-size: cover
+	position: relative
 
-img
-	max-width: 100%
-	height: auto
+.masthead-brand
+	> a
+		display: block
+		font-weight: 600
+		img
+			float: left
+			margin-right: 10px
+			position: relative
+			top: -5px
+	margin: 0
+
+.navbar-default .navbar-nav
+	> .active,
+	> li:hover
+		> a
+			background-color: #fff
+			color: $blue
+			position: relative
+			&:after
+				content: ''
+				height: 2px
+				width: 100%
+				background-color: $blue
+				position: absolute
+				top: 0
+				left: 0
+				transition: all .3s ease
+			&:hover
+				background-color: #fff
 
 #wrapper
-	min-height: 400px
-	background: #fff
+	padding: 30px 0
+	min-height: 100px
+	background-color: $bg-color
+
+#home-bar
+	background-color: $yellow
+	height: 50px
+	position: relative
+	z-index: 8
+
+.app-banner
+	position: relative
+	bottom: -50px
+	z-index: 9
+
+.slogan
+	> a > img
+		width: auto
+		height: 40px
+		display: inline-block
+
+.slogan
+	color: $yellow
+	padding: 20px
+	margin-top: 30%
+	font-weight: 300
+	h3
+		font-weight: 400
+		letter-spacing: 1px
+	p
+		color: #fff
+	@media #{$screen-md}
+		margin-top: 10%
+
+.icon-box
+	font-size: 100px
+	text-align: center
+	border-radius: 50%
+	color: $yellow
+	margin: 20px auto
+
+.desc
+	max-width: 300px
+	margin: 0 auto
+
+#footer
+	background-color: $footer-bg
+	position: relative
+	z-index: 2
+	color: #fff
+	padding: 15px 0
+	font-size: 12px
+	color: lighten($footer-bg, 70%)
+	margin-top: 100px

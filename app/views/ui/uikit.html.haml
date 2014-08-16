@@ -1,0 +1,277 @@
+= render 'partial/header'
+
+%section#page
+  %header.page_header
+    .container
+      %h1.title Uikit
+  .container
+    .row
+      .col-md-6.col-lg-4
+        .panel
+          .panel-body
+            %h2.title.title_base.sr-only Form
+            %form(role="form")
+              .form-group
+                %label(for="") Text
+                %input.form-control(type="text" placeholder="Your name")
+              .form-group
+                %label(for="") Password
+                %input.form-control(type="password" placeholder="")
+              .form-group
+                %label(for="") Icon style
+                .input-group
+                  .input-group-addon
+                    %i.fa.fa-phone.fa-fw
+                  %input.form-control(type="password" placeholder="")
+              .form-group
+                %label(for="") Icon Style ii
+                .input-group
+                  %input.form-control(type="password" placeholder="")
+                  .input-group-addon
+                    %i.fa.fa-lock.fa-fw
+              .form-group
+                %label(for="") Textarea
+                %textarea.form-control(placeholder="Write something..")
+              .form-group
+                %label Select
+                .select-control
+                  %select
+                    %option 1
+                    %option 2
+                    %option 3
+              .row
+                .form-group.col-lg-6
+                  .checkbox
+                    %label
+                      %input#check-1(type="checkbox") Check me
+                      %label(for="check-1")
+                  .checkbox
+                    %label
+                      %input#check-2(type="checkbox" checked) Check me
+                      %label(for="check-2")
+                  %hr
+                  .checkbox.switch
+                    %label
+                      %input#check-3(type="checkbox" checked)
+                      %label(for="check-3")
+                .form-group.col-lg-6
+                  .radio
+                    %label
+                      %input#option-1(type="radio" name="option-1" value="opt1" checked) Option one is 
+                      %label(for="option-1")
+                  .radio
+                    %label
+                      %input#option-2(type="radio" name="option-1" value="opt1") Why it's great 
+                      %label(for="option-2")
+                  %hr
+                  .checkbox.switch
+                    %label
+                      %input#check-4(type="checkbox")
+                      %label(for="check-4")
+
+        .panel
+          .panel-body
+            %h2.title.title_base.sr-only Button
+            .row
+              .col-lg-6
+                %button.btn.btn-default.btn-block(type="button") Default
+                %button.btn.btn-primary.btn-block(type="button") Primary
+                %button.btn.btn-success.btn-block(type="button") Success
+              .col-lg-6
+                %button.btn.btn-info.btn-block(type="button") Info
+                %button.btn.btn-warning.btn-block(type="button") Warning
+                %button.btn.btn-danger.btn-block(type="button") Danger
+              .col-lg-12
+                %hr
+                %button.btn.btn-info.btn-xs(type="button")
+                  %span.glyphicon.glyphicon-star
+                  Add to list
+                %button.btn.btn-info.btn-xs(type="button")
+                  %span.glyphicon.glyphicon-heart-empty
+                  Like
+                %button.btn.btn-success.btn-xs(type="button")
+                  %span.glyphicon.glyphicon-heart
+                  Liked
+      
+      .col-md-6.col-lg-5
+        .panel
+          .panel-body
+            %h2.title.title_base.sr-only Dropdowns
+            .btn-group
+              %a#dLabel.btn.btn-default.dropdown-toggle(data-toggle="dropdown"  data-target="#" href="#") 
+                Dropdown
+                %span.caret
+              %ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                %li
+                  %a{:href => "/"} Menu item
+                %li
+                  %a{:href => "/"} Menu item
+                %li
+                  %a{:href => "/"} Menu item
+            .btn-group.open
+              %button.btn.btn-default.dropdown-toggle User info
+              %a#dLabel.btn.btn-default.dropdown-toggle(data-toggle="dropdown"  data-target="#" href="#")
+                %span.caret
+              %ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                %li.active
+                  %a{:href => "/"} 
+                    %i.fa.fa-user.fa-fw
+                    Menu item
+                %li
+                  %a{:href => "/"} 
+                    %i.fa.fa-gear.fa-fw
+                    Menu item
+                %li
+                  %a{:href => "/"} 
+                    %i.fa.fa-download.fa-fw
+                    Menu item
+            %hr(style="margin-top:120px")
+        
+        .panel
+          .panel-body
+            %h2.title.title_base.sr-only Tab
+            %ul.nav.nav-tabs.nav-justified(role="tablist")
+              %li.active
+                %a{:href => "#tab1"}(role="tab" data-toggle="tab") Home
+              %li
+                %a{:href => "#tab2"}(role="tab" data-toggle="tab") Profile
+              %li
+                %a{:href => "#tab3"}(role="tab" data-toggle="tab") Message
+            .tab-content
+              .tab-pane.fade.in.active#tab-1
+                %p 観善橋観帯慣政省変原昨不般事受囲我済分新。復界原原貢徴関部島常覧団選員治米海整断摘。治強毎女国南催刊界厚転足最。兵視難谷列始自氏賀障法今出験映画都統済職。山線情明書生齢写在著戻治麻善。足栃日年放更変分田工投質置。貸野住摘始断策龍安育画損区仏。週掲稿能東指毎周馬氷散参。剛週衆転米水生情転新開泉特新化箱需胸頭。
+              .tab-pane.fade#tab-2
+                %p 管問全球内立需出地今与提必前京岡致一。並竹知文歳満断用豪父火陳週行増。交港周十講営担特報分基元期限案毎迎治政。辞咲掲同魚載転倍企提現情転失国干育高独情。前属点作選真関芸愛国生返暮斎死椅。保銅習込療確見用第中就大負極。病紹埼絶陣一覧投則各娘観就午本西縮要夫。自勤背電毎必参辞克旬解連知真報碑公海条。
+              .tab-pane.fade#tab-3
+                %p 器無活政育東右京様教島雪私明数必学芸全。皇湧郵京注損奥軽供場車全獲鶴目議応理達人。映東気念今勝京並学川神提検氷対生投界画良。検用変悪曽化会率歴辺手露聖戦投民写。問入志特際財裁属寸新際載釣初能展念合新。公事賢治提使軟究気違遺投迎記作白。集退婚器阪掲紙行組権龍陸全将技財文伝集。置囲載次家大竹同六類今能準国質転有促。
+        
+        .panel
+          .panel-body
+            %h2.title.title_base.sr-only Box
+            .row.pane
+              .col-sm-6
+                .pane_img
+                  = image_tag "cover.jpg", :class => "img-responsive"
+              .col-sm-6
+                .pane_detail
+                  %h4.title.title_book 無限道武者路
+                  %p.desc 作為中國最精銳的特種部隊的格鬥教練，他已經站在實戰國術的巔峰。 然而他不無遺憾，因為人力有限，國術雖精，卻仍然是有
+                  %hr
+                  %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
+                  %button.btn.btn-info.btn-sm(type="button") 
+                    閱讀
+                    %i.fa.fa-long-arrow-right
+
+      .col-md-6.col-lg-3
+        %h2.title.title_base.sr-only pin
+        .panel.pin
+          .panel-body.text-center
+            = image_tag "avatar.jpg", :class=> "avatar img-circle img-responsive"
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+
+        %h2.title.title_base.sr-only Side Menu
+        %ul.list-group.panel
+          %li.list-group-item.active
+            %a{:href => "/"} 全部分類
+          %li.list-group-item
+            %a{:href => "/"} 玄幻奇幻
+          %li.list-group-item
+            %a{:href => "/"} 仙俠武俠
+          %li.list-group-item
+            %a{:href => "/"} 遊戲
+          %li.list-group-item
+            %a{:href => "/"} 競技
+          %li.list-group-item
+            %a{:href => "/"} 歷史
+          %li.list-group-item
+            %a{:href => "/"} 軍事
+          %li.list-group-item
+            %a{:href => "/"} 科幻
+          %li.list-group-item
+            %a{:href => "/"} 驚悚
+          %li.list-group-item
+            %a{:href => "/"} 都市
+          %li.list-group-item
+            %a{:href => "/"} 同人
+          %li.list-group-item
+            %a{:href => "/"} 女生
+
+    %hr
+    
+    .row
+      .col-lg-6
+        .panel
+          .panel-body
+            .row
+              .col-sm-6
+                .inner
+                  %form(role="form")
+                    .form-group
+                      %label.sr-only(for="") 帳號
+                      %input.form-control(type="text" placeholder="用戶帳號")
+                    .form-group
+                      %label.sr-only(for="") 密碼
+                      %input.form-control(type="password" placeholder="密碼")
+                    .checkbox
+                      %label
+                        %input#check-1(type="checkbox") 記住我
+                        %label(for="check-1")
+                    %button.btn.btn-info.btn-block(type="button") 登入
+              .col-sm-6.left-line
+                .inner
+                  %p.desc.text-center 或者你可以利用以下帳號登入
+                  %br
+                  %button.btn.btn-block.btn-icon.facebook-btn(type="button") 
+                    %span.fa.fa-facebook.icon
+                    Facebook
+                  %button.btn.btn-block.btn-icon.google-btn(type="button") 
+                    %span.fa.fa-google-plus.icon
+                    Google +
+          .panel-footer
+            .inner
+              %a{:href => "/"} 忘記密碼
+              %span.pull-right 
+                還沒有帳號？
+                %a{:href => "/"}馬上註冊
+      .col-lg-6
+        .panel
+          .panel-body
+            .row
+              .col-sm-6
+                .inner
+                  %form(role="form")
+                    .form-group
+                      %label.sr-only(for="") 暱稱
+                      %input.form-control(type="text" placeholder="用戶帳號")
+                    .form-group
+                      %label.sr-only(for="") 密碼
+                      %input.form-control(type="text" placeholder="密碼")
+              .col-sm-6
+                .inner
+                  %form(role="form")
+                    .form-group
+                      %label.sr-only(for="") Email
+                      %input.form-control(type="email" placeholder="電子郵件")
+                    .form-group
+                      %label.sr-only(for="") 密碼
+                      %input.form-control(type="text" placeholder="確認密碼")
+              .col-sm-12
+                .col-xs-8
+                  %small 密碼長度必須多餘8個字元
+                .col-xs-4
+                  %button.btn.btn-primary.btn-block(type="button") 註冊
+          .panel-footer.text-center
+            .inner
+              已經有帳號了，
+              %a{:href => "/"}馬上登入
+
+
+= render 'partial/footer'

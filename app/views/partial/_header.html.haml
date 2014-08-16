@@ -1,8 +1,22 @@
-#header.navbar.navbar-inverse{:role => "navigation"}
+#header.navbar.navbar-default{:role => "navigation"}
   .container
-    .masthead-brand
-      = link_to root_path do 
-        %h1 小說王
-    %ul.nav.masthead-nav
-      %li.index-nav
-        = link_to "首頁", root_path
+    .navbar-header
+      .masthead-brand
+        = link_to root_path , :class => "navbar-brand" do
+          = image_tag "app_icon.png"
+          %span 小說王
+    %nav.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          = link_to "首頁", root_path
+        %li
+          = link_to "推薦小說", root_path
+        %li
+          = link_to "小說分類", root_path
+        %li
+          = link_to "我要投稿", root_path
+        %li
+          = link_to "加入我們", root_path
+      %div.nav.navbar-nav.navbar-right
+        %span
+          = link_to "下載 APP", root_path , :class => "btn btn-primary navbar-btn"
