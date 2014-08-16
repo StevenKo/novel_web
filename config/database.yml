@@ -7,4 +7,3 @@ development:
   username: root
   password: root
   port: 3306
-  pool: 50
