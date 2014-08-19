@@ -1,38 +1,42 @@
-= render 'partial/header'
+#push-container 
 
-%section#page
+  = render 'partial/header'
 
-  %section#home-banner
-    .container
-      .row
-        .col-sm-6
-          = image_tag "app-2.png", :class => "app-banner hidden-xs img-responsive"
-        .col-sm-6
-          .slogan
-            %h3 小說王 : 最適合你的小說閱讀器
-            %p 目前 Android 上最好用的看小說 APP 及小說閱讀器軟體，這款 APP蒐集大量全球的小說，包含：武俠經典，翻譯小說，網路小說，奇幻小說，言情小說等等。
-            =link_to (image_tag "en_generic_rgb_wo_45.png"), "https://play.google.com/store/apps/details?id=com.novel.reader"
-            =link_to (image_tag "ios.svg"), "#"
+  %section#page
 
-  %section#home-bar
+    %section#home-banner
+      .container
+        .row
+          .col-sm-6
+            = image_tag "app-2.png", :class => "app-banner hidden-xs img-responsive"
+          .col-sm-6
+            .slogan
+              %h3 小說王 : 最適合你的小說閱讀器
+              %p 目前 Android 上最好用的看小說 APP 及小說閱讀器軟體，這款 APP蒐集大量全球的小說，包含：武俠經典，翻譯小說，網路小說，奇幻小說，言情小說等等。
+              =link_to (image_tag "en_generic_rgb_wo_45.png"), "https://play.google.com/store/apps/details?id=com.novel.reader"
+              =link_to (image_tag "ios.svg"), "#"
 
-  %section#wrapper
-    .container
-      .row.text-center
-        .col-sm-4
-          .icon-box
-            %i.fa.fa-refresh
-          %h4 定期更新
-          .desc 只要作者有新的文章，小說王每天都會儘快更新文章，期許能滿足愛看小說的大眾。
-        .col-sm-4
-          .icon-box
-            %i.fa.fa-life-ring
-          %h4 問題回報
-          .desc 小說王的文章多來自作者投稿或是網路搜集, 因為網路來源有多是整理不好或殘缺的小說，我們在APP裡面可以接受讀者的回報，我們會儘快地處理。
-        .col-sm-4
-          .icon-box
-            %i.fa.fa-pencil-square-o
-          %h4 作家徵稿
-          .desc 熱血的小說家們，擔心作品沒人看見嗎？小說王接受作家的投稿，也會在APP裡面推薦作品，希望有更多好看的小說被讀者們閱讀欣賞。
+    %section#home-bar
 
-= render 'partial/footer'
+    %section#wrapper
+      .container
+        .row.text-center
+          .col-sm-4
+            .icon-box
+              %i.fa.fa-refresh
+            %h4 定期更新
+            .desc 只要作者有新的文章，小說王每天都會儘快更新文章，期許能滿足愛看小說的大眾。
+          .col-sm-4
+            .icon-box
+              %i.fa.fa-life-ring
+            %h4 問題回報
+            .desc 小說王的文章多來自作者投稿或是網路搜集, 因為網路來源有多是整理不好或殘缺的小說，我們在APP裡面可以接受讀者的回報，我們會儘快地處理。
+          .col-sm-4
+            .icon-box
+              %i.fa.fa-pencil-square-o
+            %h4 作家徵稿
+            .desc 熱血的小說家們，擔心作品沒人看見嗎？小說王接受作家的投稿，也會在APP裡面推薦作品，希望有更多好看的小說被讀者們閱讀欣賞。
+
+  = render 'partial/footer'
+
+= render 'partial/mobile'
