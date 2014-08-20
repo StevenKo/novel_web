@@ -1,0 +1,92 @@
+@import variable
+
+#page
+  min-height: 100%
+  position: relative
+  z-index: 1
+  .page_header
+    background-color: #f0f0f0
+    border-bottom: 1px solid darken($bg-color, 10%)
+    color: #666
+    padding: 20px 0
+    margin-bottom: 20px
+
+#header 
+  border: none
+  border-radius:  0
+  margin-bottom: 0
+
+#home-banner
+  background: url(bg.jpg) center center no-repeat
+  background-size: cover
+  position: relative
+
+#wrapper
+  padding: 30px 0 100px 0
+  min-height: 100px
+  background-color: $bg-color
+
+#home-bar
+  background-color: $yellow
+  height: 50px
+  position: relative
+  z-index: 8
+
+#footer
+  background-color: $footer-bg
+  position: relative
+  z-index: 2
+  color: #fff
+  padding: 15px 0
+  font-size: 12px
+  color: lighten($footer-bg, 70%)
+
+=full($der,$color)
+  &.full
+    &:before
+      content: ''
+      position: absolute
+      background-color: $color
+      height: 100%
+      width: 100%
+      #{$der}: -100%
+      top: 0
+      display: none
+      @media only screen and (min-width : 768px)
+        display: block
+
+.left-wrapper
+  position: relative
+  background-color: $left-bg
+  +full(left,$left-bg)
+  .list-group
+    .list-group-item
+      padding: 8px 15px
+      &.list-group-title,
+      &.list-group-title > a
+        color: lighten($left-bg, 30%)
+        text-align: right
+        font-size: 12px
+        margin-top: 2em
+      background-color: $left-bg
+      border-color: $left-bg
+      a
+        text-align: right
+        display: block
+        color: lighten($left-bg, 50%)
+        &:hover
+          color: $brand-primary
+
+.right-wrapper
+  position: relative
+  background-color: $bg-color
+  +full(right,$bg-color)
+
+.content
+  @media only screen and (min-width : 992px)
+    padding: $grid-gutter-width
+  .content-top
+    margin-bottom: $grid-gutter-width
+    background-color: darken($bg-color, 3%)
+    border-radius: $border-radius-small
+    padding: $grid-gutter-width

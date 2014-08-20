@@ -8,6 +8,13 @@
         %h1.title Uikit
     .container
       .row
+        .col-md-12
+          %ol.breadcrumb
+            %li
+              %a{:href => "/"} 首頁
+            %li
+              %a{:href => "/"} 閱讀小說
+      .row
         .col-md-6.col-lg-4
           .panel
             .panel-body
@@ -131,6 +138,42 @@
           
           .panel
             .panel-body
+              .tag-bar
+                .tag-title
+                  %span 標簽
+                .tag-list
+                  %ul.list-inline
+                    %li
+                      %a.active.label.label-primary{:href => "/"} 遊戲
+                    %li 
+                      %a{:href => "/"} 仙俠武俠
+                    %li 
+                      %a{:href => "/"} 玄幻奇幻
+              .tag-bar
+                .tag-title
+                  %span 標簽
+                .tag-list
+                  %ul.list-inline
+                    %li
+                      %a{:href => "/"} 遊戲
+                    %li 
+                      %a.active.label.label-primary{:href => "/"} 仙俠武俠
+                    %li 
+                      %a{:href => "/"} 玄幻奇幻
+              .tag-bar
+                .tag-title
+                  %span 標簽
+                .tag-list
+                  %ul.list-inline
+                    %li
+                      %a{:href => "/"} 遊戲
+                    %li 
+                      %a.active.label.label-primary{:href => "/"} 仙俠武俠
+                    %li 
+                      %a{:href => "/"} 玄幻奇幻
+
+          .panel
+            .panel-body
               %h2.title.title_base.sr-only Tab
               %ul.nav.nav-tabs.nav-justified(role="tablist")
                 %li.active
@@ -179,6 +222,19 @@
               %a.btn
                 %i.fa.fa-book
 
+          .panel.pin
+            = image_tag "cover.jpg", :class=> "img-responsive"
+            .panel-body.text-center
+              %h4 界厚転
+              %span.sub-title 山線情明書生齢
+            .btn-group.btn-group-justified
+              %a.btn
+                %i.fa.fa-plus-circle
+              %a.btn
+                %i.fa.fa-heart
+              %a.btn
+                %i.fa.fa-book
+
           %h2.title.title_base.sr-only Side Menu
           %ul.list-group.panel
             %li.list-group-item.active
@@ -191,20 +247,6 @@
               %a{:href => "/"} 遊戲
             %li.list-group-item
               %a{:href => "/"} 競技
-            %li.list-group-item
-              %a{:href => "/"} 歷史
-            %li.list-group-item
-              %a{:href => "/"} 軍事
-            %li.list-group-item
-              %a{:href => "/"} 科幻
-            %li.list-group-item
-              %a{:href => "/"} 驚悚
-            %li.list-group-item
-              %a{:href => "/"} 都市
-            %li.list-group-item
-              %a{:href => "/"} 同人
-            %li.list-group-item
-              %a{:href => "/"} 女生
 
       %hr
       
@@ -275,6 +317,9 @@
                 已經有帳號了，
                 %a{:href => "/"}馬上登入
 
+
+      %br
+      %br
   = render 'partial/footer'
 
 = render 'partial/mobile'

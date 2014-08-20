@@ -1,40 +1,23 @@
 @import           url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css)
+@import           variable
 
-$blue             : #1AB6E9
-$yellow           : #F6B825
-$footer-bg        : #202021
-$bg-color         : darken(#fff, 2%)
-$screen-md        : "only screen and (max-width : 992px)"
+
+$screen-md           : "only screen and (max-width : 992px)"
 
 body,
 html
 	height: 100%
 	min-height: 100%
+	overflow-x: hidden
 
 body
 	padding: 0
 	background-color: $bg-color
 
-#page
-	min-height: 100%
-	background-color: $bg-color
-	position: relative
-	z-index: 1
-	.page_header
-		background-color: $blue
-		color: #ffffff
-		padding: 20px 0
-		margin-bottom: 20px
+.dark-bg
+	@media only screen and (min-width : 768px)
+		background-color: $left-bg
 
-#header 
-	border: none
-	border-radius:  0
-	margin-bottom: 0
-
-#home-banner
-	background: url(bg.jpg) center center no-repeat
-	background-size: cover
-	position: relative
 
 .masthead-brand
 	> a
@@ -66,23 +49,10 @@ body
 			&:hover
 				background-color: #fff
 
-#wrapper
-	padding: 30px 0
-	min-height: 100px
-	background-color: $bg-color
-
-#home-bar
-	background-color: $yellow
-	height: 50px
-	position: relative
-	z-index: 8
-
 .app-banner
 	position: relative
 	bottom: -50px
 	z-index: 9
-	max-width: 400px
-	margin: 0 auto
 
 .slogan
 	> a > img
@@ -114,18 +84,7 @@ body
 	max-width: 300px
 	margin: 0 auto
 
-#footer
-	background-color: $footer-bg
-	position: relative
-	z-index: 2
-	color: #fff
-	padding: 15px 0
-	font-size: 12px
-	color: lighten($footer-bg, 70%)
-	margin-top: 100px
-
 // Mobile Menu
-
 #push-container
 	position: relative
 	z-index: 1020
@@ -164,3 +123,21 @@ $mobile-bg : #333
 			color: #1AB6E9
 	&.active
 		transform: translateX(20%)
+
+#close-sidebar-btn
+	margin: 35px 0 20px 0
+
+.breadcrumb.full
+	position: relative
+	&:after
+		content: ''
+		height: 33px
+		width: 100%
+		background-color: $breadcrumb-bg
+		position: absolute
+		top: 0
+		right: -100%
+		z-index: 1
+		display: none
+		@media only screen and (min-width : 768px)
+			display: block

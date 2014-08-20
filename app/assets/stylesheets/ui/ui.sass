@@ -244,6 +244,67 @@ a
     a
       color: $brand-primary
 
+// Breadcrumb
+.breadcrumb
+  margin-bottom: 1em
+  border-radius: 0
+  font-size: 12px
+  color: #fff
+  a
+    color: #fff
+
+// Table
+.table
+  td
+    padding: 10px
+
+// Tag-bar
+.tag-bar
+  font-size: 12px
+  & + .tag-bar
+    padding-top: 15px
+    border-top: 1px dotted darken($bg-color, 15%)
+  &:last-child
+    padding-bottom: 0
+  .tag-title
+    float: left
+    margin-right: ($grid-gutter-width/2)
+    font-weight: bold
+    > span
+      padding: .2em .6em .3em
+      background-color: darken($bg-color, 15%)
+      font-size: 12px
+      color: #888
+      border-radius: 4px
+      position: relative
+      &:after
+        content: ''
+        position: absolute
+        right: -6px
+        top: 50%
+        margin-top: -6px
+        height: 0
+        width: 0
+        border-width: 6px 0 6px 6px
+        border-style: solid
+        border-color: transparent transparent transparent darken($bg-color, 15%)
+  .tag-list
+    margin: 0
+    padding: 0
+    li
+      a
+        color: #666
+        margin-bottom: .5em
+        display: inline
+        &:hover
+          color: $brand-primary
+        &.active
+          color: #fff
+          font-weight: 300
+          font-size: 12px
+          &:hover
+            color: #eee
+
 // Helper
 .left-line
   border-left: 1px solid $btn-default-border
