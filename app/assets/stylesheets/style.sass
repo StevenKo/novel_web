@@ -46,8 +46,27 @@ body
 				top: 0
 				left: 0
 				transition: all .3s ease
-			&:hover
-				background-color: #fff
+	> .open > a,
+	> .open > a:hover,
+	> .open > a:focus
+		background-color: darken(#fff, 4%)
+
+.dropdown-user
+	.dropdown-menu
+		border: none
+		box-shadow: 0 6px 10px rgba(0,0,0,.2)
+		li
+			a
+				border: none
+				background-color: darken(#fff, 4%)
+				&:hover
+					background-color: $brand-primary 
+					color: #fff
+			&.active > a 
+				color: $brand-primary 
+				&:hover
+					background-color: $brand-primary 
+					color: #fff
 
 .app-banner
 	position: relative
@@ -79,50 +98,11 @@ body
 	border-radius: 50%
 	color: $yellow
 	margin: 20px auto
+	& ~ .desc
+		max-width: 270px
 
 .desc
-	max-width: 300px
 	margin: 0 auto
-
-// Mobile Menu
-#push-container
-	position: relative
-	z-index: 1020
-	top: 0
-	left: 0
-	transition: all .4s ease
-	&.active
-		transform: translateX(-80%)
-
-.navbar-mobile
-	float: right
-	line-height: 50px
-	padding: 0 1em
-	font-size: 20px
-
-$mobile-bg : #333
-#mobile-wrapper
-	position: fixed
-	top: 0
-	width: 100%
-	height: 100%
-	background-color: $mobile-bg
-	z-index: 1
-	transform: translateX(100%)
-	transition: all .4s ease
-	.list-group-item
-		background-color: $mobile-bg
-		border-top-color: lighten($mobile-bg, 5%) 
-		border-right-color: lighten($mobile-bg, 5%) 
-		border-bottom-color: lighten($mobile-bg, 5%)
-		a
-			color: lighten($mobile-bg, 40%)
-		&:not(.active)
-			border-left-color: transparent
-		&.active a
-			color: #1AB6E9
-	&.active
-		transform: translateX(20%)
 
 #close-sidebar-btn
 	margin: 35px 0 20px 0

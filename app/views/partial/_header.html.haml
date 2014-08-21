@@ -13,13 +13,62 @@
         %li.active
           = link_to "首頁", root_path
         %li
-          = link_to "推薦小說", root_path
-        %li
           = link_to "小說分類", root_path
         %li
-          = link_to "我要投稿", root_path
+          = link_to "下載APP", root_path
         %li
-          = link_to "加入我們", root_path
+          = link_to "我要投稿", root_path
       %div.nav.navbar-nav.navbar-right
-        %span
-          = link_to "下載 APP", root_path , :class => "btn btn-primary navbar-btn"
+        %ul.nav.navbar-nav
+          %li
+            = link_to "登入", root_path , :class => ""
+          %li
+            = link_to "註冊", root_path , :class => ""
+          %li.dropdown.dropdown-user
+            %a#userinfo.dropdown-toggle(data-toggle="dropdown"  data-target="#" href="#")
+              = image_tag "avatar-2.jpg", :class => "img-responsive img-circle dropdown-small-img"
+              魔力紅
+              %span.caret
+            %ul.dropdown-menu(role="menu" aria-labelledby="userinfo")
+              %li.active
+                %a{:href => "/"} 
+                  %i.fa.fa-user.fa-fw
+                  我的帳號
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-gears.fa-fw
+                  帳號設定
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-envelope.fa-fw
+                  我的信息
+              %li.divider
+              %li
+                %a{:href => "/"}
+                  %i.fa.fa-font.fa-fw
+                  閱讀偏好設定
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-heart.fa-fw
+                  收藏小說
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-star.fa-fw
+                  購買點數
+              %li.divider
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-edit.fa-fw
+                  投稿說明
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-book.fa-fw
+                  我的小說
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-gears.fa-fw
+                  作者設定
+              %li
+                %a{:href => "/"} 
+                  %i.fa.fa-bullhorn.fa-fw
+                  發佈信息

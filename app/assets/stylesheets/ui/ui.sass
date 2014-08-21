@@ -172,6 +172,21 @@ a
       border-bottom: 1px solid $btn-default-border
       font-size: 12px
       padding: 6px 10px
+    &.divider
+      margin: 0
+
+.dropdown-small-img
+  width: 22px
+  height: 22px
+
+
+// Nav
+.nav
+  > li
+    &.open
+      background-color: darken(#fff, 4%)
+      &:hover
+        background-color: darken(#fff, 4%)
 
 // Tab
 .nav-tabs.nav-justified
@@ -262,10 +277,9 @@ a
 .tag-bar
   font-size: 12px
   & + .tag-bar
-    padding-top: 15px
+    margin-top: 12px
+    padding-top: 10px
     border-top: 1px dotted darken($bg-color, 15%)
-  &:last-child
-    padding-bottom: 0
   .tag-title
     float: left
     margin-right: ($grid-gutter-width/2)
@@ -289,21 +303,21 @@ a
         border-style: solid
         border-color: transparent transparent transparent darken($bg-color, 15%)
   .tag-list
-    margin: 0
-    padding: 0
-    li
-      a
-        color: #666
-        margin-bottom: .5em
-        display: inline
-        &:hover
-          color: $brand-primary
-        &.active
-          color: #fff
-          font-weight: 300
-          font-size: 12px
+    > ul 
+      margin: 0
+      padding: 0
+      li
+        a
+          color: #666
+          display: inline
           &:hover
-            color: #eee
+            color: $brand-primary
+          &.active
+            color: #fff
+            font-weight: 300
+            font-size: 12px
+            &:hover
+              color: #eee
 
 // Helper
 .left-line

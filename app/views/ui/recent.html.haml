@@ -4,51 +4,13 @@
 
   %section#page.dark-bg
     .container
-      %section.left-wrapper.full.col-xs-2.hidden-xs
-        .left-wrapper-top.text-right
-          %a#close-sidebar-btn.btn.btn-default.btn-sm.visible-xs(type="button")
-            %i.fa.fa-fw.fa-arrow-left
-            %span.hidden-sm 收起工具欄
-        %ul.list-group
-          %li.list-group-item.list-group-title 小說分類
-          %li.list-group-item.active
-            %a{:href => "/"} 全部分類
-          %li.list-group-item
-            %a{:href => "/"} 玄幻奇幻
-          %li.list-group-item
-            %a{:href => "/"} 仙俠武俠
-          %li.list-group-item
-            %a{:href => "/"} 遊戲
-          %li.list-group-item
-            %a{:href => "/"} 競技
-          %li.list-group-item
-            %a{:href => "/"} 歷史
-          %li.list-group-item
-            %a{:href => "/"} 軍事
-          %li.list-group-item
-            %a{:href => "/"} 科幻
-          %li.list-group-item
-            %a{:href => "/"} 驚悚
-          %li.list-group-item
-            %a{:href => "/"} 都市
-          %li.list-group-item
-            %a{:href => "/"} 同人
-          %li.list-group-item
-            %a{:href => "/"} 女生
-        %ul.list-group
-          %li.list-group-item.list-group-title 另外一個標題
-          %li.list-group-item.active
-            %a{:href => "/"} 全部分類
-          %li.list-group-item
-            %a{:href => "/"} 玄幻奇幻
-          %li.list-group-item
-            %a{:href => "/"} 仙俠武俠
+      = render 'partial/sidebar'
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
           %li
             %a{:href => "/"} 首頁
           %li
-            %a{:href => "/"} 閱讀小說
+            %a{:href => "/"} 小說列表分類
         .content
           .content-top
             .tag-bar
