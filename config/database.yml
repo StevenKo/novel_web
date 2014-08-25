@@ -7,3 +7,14 @@ development:
   username: root
   password: root
   port: 3306
+
+
+production:
+
+  adapter: mysql2
+  database: novel_server
+  host: 127.0.0.1
+  encoding: utf8
+  username: root
+  password: root
+  port: 3306
