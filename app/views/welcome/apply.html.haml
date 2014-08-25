@@ -3,40 +3,43 @@
   <meta name="description" content="小說王需要有更多作家的參與, 讓網路作家們的作品能給更多的讀者看到與分享, 希望作家們能來投稿, 成為小說王的簽約作家">
   <meta name="keywords" content="小說投稿,網路作家,出書,投稿,出版,出版社,作者,作家,小說王">
 
-= render 'shared/header'
+#push-container 
+  = render 'shared/header'
 
-.jumbotron.col-centered.narrow
-  %h2.text-primary 申請成為小說王作家
-  %p.lead 讓網路作家們的作品能給更多的讀者看到與分享
-  %p
-    有許人懷抱著作家的夢，但作品沒有流傳的管道; 小說王希望打造一個平台，誠摯邀請你來成為我們的簽約作家
-  %p
-    = form_for @writer, url: apply_writer_path,:html => {:class => "form-horizontal", multipart: true} do |f|
-      - if @writer.errors.any?
-        #error_explanation
-          %h3.text-danger 無法寄出訊息，請檢查以下錯誤:
-          %ul
-            - @writer.errors.full_messages.each do |msg|
-              %li.text-danger= msg
-      .form-group
-        %label.col-sm-2.control-label{:for => "inputEmail3"} Email
-        .col-sm-10
-          = f.text_field(:email, class: "form-control", :step => 'any')
-      .form-group
-        %label.col-sm-2.control-label{:for => "inputEmail3"} 姓名(筆名)
-        .col-sm-10
-          = f.text_field(:name, class: "form-control", :step => 'any')
-      .form-group
-        %label.col-sm-2.control-label{:for => "inputEmail3"} 作品連結(個人網站)
-        .col-sm-10
-          = f.text_field(:url, class: "form-control", :step => 'any')
-      .form-group
-        %label.col-sm-2.control-label{:for => "inputEmail3"} 電話(可不提供)
-        .col-sm-10
-          = f.text_field(:phone, class: "form-control", :step => 'any')
-      .form-group
-        %label.col-sm-2.control-label{:for => "inputEmail3"} 備註
-        .col-sm-10
-          = f.text_area(:remark, class: "form-control", :step => 'any')
-      .form-group
-        %button.btn.btn-default{:type => "submit"} 寄出
+  .jumbotron.col-centered.narrow
+    %h2.text-primary 申請成為小說王作家
+    %p.lead 讓網路作家們的作品能給更多的讀者看到與分享
+    %p
+      有許人懷抱著作家的夢，但作品沒有流傳的管道; 小說王希望打造一個平台，誠摯邀請你來成為我們的簽約作家
+    %p
+      = form_for @writer, url: apply_writer_path,:html => {:class => "form-horizontal", multipart: true} do |f|
+        - if @writer.errors.any?
+          #error_explanation
+            %h3.text-danger 無法寄出訊息，請檢查以下錯誤:
+            %ul
+              - @writer.errors.full_messages.each do |msg|
+                %li.text-danger= msg
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputEmail3"} Email
+          .col-sm-10
+            = f.text_field(:email, class: "form-control", :step => 'any')
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputEmail3"} 姓名(筆名)
+          .col-sm-10
+            = f.text_field(:name, class: "form-control", :step => 'any')
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputEmail3"} 作品連結(個人網站)
+          .col-sm-10
+            = f.text_field(:url, class: "form-control", :step => 'any')
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputEmail3"} 電話(可不提供)
+          .col-sm-10
+            = f.text_field(:phone, class: "form-control", :step => 'any')
+        .form-group
+          %label.col-sm-2.control-label{:for => "inputEmail3"} 備註
+          .col-sm-10
+            = f.text_area(:remark, class: "form-control", :step => 'any')
+        .form-group
+          %button.btn.btn-default{:type => "submit"} 寄出
+
+= render 'shared/mobile'
