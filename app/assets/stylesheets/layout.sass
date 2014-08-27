@@ -51,6 +51,15 @@
   &.active
     transform: translateX(-80%)
 
+// Feature
+#feature-wrapper
+  border-top: 10px solid #f6b825
+  min-height: 200px
+  padding: 20px 0
+  > .container
+    padding: 0 22px
+
+
 .navbar-mobile
   float: right
   line-height: 50px
@@ -134,3 +143,15 @@ $mobile-bg : #333
     background-color: darken($bg-color, 3%)
     border-radius: $border-radius-small
     padding: $grid-gutter-width
+
+.pin-wrapper
+  .pin
+    width: 48%
+    margin: 1%
+    float: left
+    @media only screen and (min-width : 768px)
+      width: 31%
+    @media only screen and (min-width : 992px)
+      width: 23%
+    @media only screen and (min-width : 1200px)
+      width: 18%

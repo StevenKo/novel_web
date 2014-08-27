@@ -18,15 +18,27 @@ $gray-color                 : #f9f9f9
   padding: 0
   text-transform: uppercase
   letter-spacing: 1px
+  &.title_panel,
   &.title_base
     font-size: 20px
     border-bottom: 1px solid #eee
     margin: 40px 0 20px 0
     padding-bottom: 15px
   &.title_book
-    font-size: 20px
+    font-size: 16px
     color: #000
-    margin-bottom: .5em
+    margin: .5em 0
+    @media only screen and (min-width : 992px)
+      margin-top: 0
+  &.title_panel
+    border-bottom: none
+    margin: 30px 0 10px 0
+    padding: .8em 0 .4em 0
+    font-weight: 300
+    font-size: 18px
+    border-bottom: 2px solid #eee
+    @media only screen and (min-width : 992px)
+      margin: 10px 0
 
 p
   font-size: 16px
@@ -318,6 +330,26 @@ a
             font-size: 12px
             &:hover
               color: #eee
+
+// navbar-form
+.navbar-form
+  .form-group .form-control
+    min-height: 0
+
+
+// Pin
+.nav-background
+  margin: 20px 10px
+  background-color: #EDEDED
+
+.nav-pills
+  > li
+    > a
+      color: #666
+      font-size: 12px
+      &:hover
+        background-color: transparent
+        color: $brand-primary
 
 // Helper
 .left-line

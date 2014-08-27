@@ -19,6 +19,9 @@
         %li
           = link_to "我要投稿", root_path
       %div.nav.navbar-nav.navbar-right
+        %form.navbar-form.navbar-left(role="search")
+          .form-group
+            %input.form-control(type="text" placeholder="搜尋小說名字或作者")
         %ul.nav.navbar-nav
           %li
             = link_to "登入", root_path , :class => ""
