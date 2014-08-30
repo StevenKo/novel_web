@@ -3,29 +3,45 @@
   <meta name="description" content="小說王致力成為最好用的小說閱讀器APP, 提供 言情,穿越,同人,科幻,武俠,歷史,網遊,偵探 等等小說, APP有下載，收藏, 書籤功能，滿足讀者需求！在Google Play, iTunes APP Store 均可下載">
   <meta name="keywords" content="小說王,小说网,言情小说,青春小说,玄幻小说,武侠小说,都市小说,历史小说,网络小说,原创网络文学,完整小說,言情小說,穿越小說,同人小說,科幻小說,武俠小說,歷史小說,網遊小說,偵探小說">
 
-= render 'shared/header'
-.center-div
-  = image_tag "banner.png", class: 'img-responsive'
-  %h3 小說王 : 最適合你的小說閱讀器
-  .jumbotron.col-centered.narrow
-    =link_to (image_tag "badge_android.png"), "https://play.google.com/store/apps/details?id=com.novel.reader"
-    = image_tag "badge_ios.png"
-.container.marketing
-  / Example row of columns
-  .row
-    .col-lg-4
-      = image_tag "watch.png"
-      %h2.text-primary 定期更新
-      %p 只要作者有新的文章，小說王每天都會儘快更新文章，期許能滿足愛看小說的大眾
-    .col-lg-4
-      = image_tag "email.png"
-      %h2.text-primary 問題回報
-      %p 小說王的文章多來自作者投稿或是網路搜集, 因為網路來源有多是整理不好或殘缺的小說，我們在APP裡面可以接受讀者的回報，我們會儘快地處理
-    .col-lg-4
-      = image_tag "pencil.png"
-      %h2.text-primary 作家徵稿
-      %p 熱血的小說家們，擔心作品沒人看見嗎？小說王接受作家的投稿，也會在APP裡面推薦作品，希望有更多好看的小說被讀者們閱讀欣賞
-  %hr
-    %footer
-      %p © Company 2014
-      本站資料來自互聯網, 由會員上載及自行管理. 版權無從考証. 書庫及論壇書籍版權屬於原作者. 不得以任何形式用于商業用途。如發現章節或資料錯誤, 版權疑問, 作品內容有違相關法律等情況, 請向我們舉報, 我們將立即刪除
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page
+
+    %section#home-banner
+      .container
+        .row
+          .col-sm-6
+            = image_tag "app-2.png", :class => "app-banner hidden-xs img-responsive"
+          .col-sm-6
+            .slogan
+              %h3 小說王 : 最適合你的小說閱讀器
+              %p 目前 Android 上最好用的看小說 APP 及小說閱讀器軟體，這款 APP蒐集大量全球的小說，包含：武俠經典，翻譯小說，網路小說，奇幻小說，言情小說等等。
+              =link_to (image_tag "en_generic_rgb_wo_45.png"), "https://play.google.com/store/apps/details?id=com.novel.reader"
+              =link_to (image_tag "ios.svg"), "#"
+
+    %section#home-bar
+
+    %section#wrapper
+      .container
+        .row.text-center
+          .col-sm-4
+            .icon-box
+              %i.fa.fa-refresh
+            %h4 定期更新
+            .desc 只要作者有新的文章，小說王每天都會儘快更新文章，期許能滿足愛看小說的大眾。
+          .col-sm-4
+            .icon-box
+              %i.fa.fa-life-ring
+            %h4 問題回報
+            .desc 小說王的文章多來自作者投稿或是網路搜集, 因為網路來源有多是整理不好或殘缺的小說，我們在APP裡面可以接受讀者的回報，我們會儘快地處理。
+          .col-sm-4
+            .icon-box
+              %i.fa.fa-pencil-square-o
+            %h4 作家徵稿
+            .desc 熱血的小說家們，擔心作品沒人看見嗎？小說王接受作家的投稿，也會在APP裡面推薦作品，希望有更多好看的小說被讀者們閱讀欣賞。
+
+  = render 'partial/footer'
+
+= render 'shared/mobile'

@@ -1,14 +1,17 @@
-.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+
+#header.navbar.navbar-default{:role => "navigation"}
   .container
-    .inner
+    .navbar-header
       .masthead-brand
-        = link_to root_path do 
+        = link_to root_path , :class => "navbar-brand" do
           = image_tag "app_icon.png"
-          %h3 小說王
-      %ul.nav.masthead-nav
+          %span 小說王
+      %nav.navbar-mobile.visible-xs
+        %a.js-mobile-btn{:href => "#"}
+          %i.fa.fa-bars.fa-fw
+    %nav.collapse.navbar-collapse
+      %ul.nav.navbar-nav
         %li.index-nav
           = link_to "首頁", root_path
-        / %li
-        /   %a{:href => "#"} 粉絲頁
         %li.apply-nav
-          = link_to "我要投稿",apply_writer_path
+          = link_to "我要投稿", apply_writer_path
