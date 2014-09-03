@@ -1,10 +1,10 @@
 #push-container 
 
-  = render 'partial/header'
+  = render 'shared/header'
 
   %section#page.dark-bg
     .container
-      = render 'partial/sidebar'
+      = render 'shared/sidebar'
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
           %li
@@ -107,6 +107,6 @@
                   %li.list-group-item
                     %a{:href => "/"} 第十章 公打
 
-  = render 'partial/footer'
+  = render 'shared/footer'
 
-= render 'partial/mobile'
+= render 'shared/mobile'

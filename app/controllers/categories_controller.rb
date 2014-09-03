@@ -4,4 +4,8 @@ class CategoriesController < ApplicationController
 
   def recommend
   end
+
+  def show
+    @category = Category.find(params[:id])
+  end
 end

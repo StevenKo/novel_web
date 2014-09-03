@@ -1,0 +1,28 @@
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page
+    .container
+      .nav-background
+        %ul.nav.nav-pills
+          %li.active
+            %a{:href => "/"} 
+              #{@category.name}
+
+      .pin-wrapper
+        - @category.novels.limit(20).each do |novel|
+          .panel.pin
+            = image_tag novel.pic, :class=> "img-responsive"
+            .panel-body.text-center
+              %h4 #{novel.name}
+              %span.sub-title #{novel.author}
+            .btn-group.btn-group-justified
+              %a.btn
+                %i.fa.fa-plus-circle
+              %a.btn
+                %i.fa.fa-heart
+              %a.btn
+                %i.fa.fa-book
+
+  = render 'shared/footer'

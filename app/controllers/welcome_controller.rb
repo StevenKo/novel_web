@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
+  
   def index
+    @recommend_novel = Novel.find(15)
+    @newest_novel = Novel.find(19)
   end
 
   def apply

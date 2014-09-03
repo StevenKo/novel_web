@@ -11,8 +11,8 @@
     .container
       .inner.text-center
         %p 最完整的小說庫, 最好用的閱讀器
-        %button.btn.btn-primary 閱讀小說
-        %button.btn.btn-success 成為作家
+        = link_to "閱讀小說", categories_path, class: "btn btn-primary"
+        = link_to "成為作家", apply_writer_path, class: "btn btn-success"
 
   %section#feature-wrapper
     .container
@@ -22,14 +22,14 @@
           .row
             .col-sm-4
               .pane_img
-                = image_tag "cover.jpg", :class => "img-responsive"
+                = image_tag @recommend_novel.pic, :class => "img-responsive"
             .col-sm-8
               .pane_detail
-                %h4.title.title_book 無限道武者路
-                %p.desc 作為中國最精銳的特種部隊的格鬥教練，他已經站在實戰國術的巔峰。
+                %h4.title.title_book #{@recommend_novel.name}
+                %p.desc #{@recommend_novel.description}
                 %br
                 %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
-                = link_to category_novel_path(0,1), class: "btn btn-default btn-sm" do
+                = link_to category_novel_path(@recommend_novel.category,@recommend_novel), class: "btn btn-default btn-sm" do
                   詳情
                   %i.fa.fa-long-arrow-right
         .col-md-5
@@ -37,14 +37,14 @@
           .row
             .col-sm-4
               .pane_img
-                = image_tag "cover.jpg", :class => "img-responsive"
+                = image_tag @newest_novel.pic , :class => "img-responsive"
             .col-sm-8
               .pane_detail
-                %h4.title.title_book 無限道武者路
-                %p.desc 作為中國最精銳的特種部隊的格鬥教練，他已經站在實戰國術的巔峰。
+                %h4.title.title_book #{@newest_novel.name}
+                %p.desc #{@newest_novel.description}
                 %br
                 %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
-                %button.btn.btn-default.btn-sm(type="button") 
+                = link_to category_novel_path(@newest_novel.category,@newest_novel), class: "btn btn-default btn-sm" do
                   詳情
                   %i.fa.fa-long-arrow-right
         .col-md-2
@@ -58,136 +58,20 @@
         %ul.nav.nav-pills
           %li.active
             %a{:href => "/"} 全部分類
-          %li
-            %a{:href => "/"} 玄幻奇幻
-          %li
-            %a{:href => "/"} 仙俠武俠
-          %li
-            %a{:href => "/"} 遊戲
-          %li
-            %a{:href => "/"} 競技
+          - Category.all.each do |category|
+            %li
+              = link_to category.name,category_path(category)
       .pin-wrapper
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
-        .panel.pin
-          = image_tag "cover.jpg", :class=> "img-responsive"
-          .panel-body.text-center
-            %h4 界厚転
-            %span.sub-title 山線情明書生齢
-          .btn-group.btn-group-justified
-            %a.btn
-              %i.fa.fa-plus-circle
-            %a.btn
-              %i.fa.fa-heart
-            %a.btn
-              %i.fa.fa-book
+        - Novel.limit(30).order("updated_at desc").each do |novel|
+          .panel.pin
+            = image_tag novel.pic, :class=> "img-responsive"
+            .panel-body.text-center
+              %h4 #{novel.name}
+              %span.sub-title #{novel.author}
+            .btn-group.btn-group-justified
+              = link_to category_novel_path(novel.category,novel), class: "btn" do
+                %i.fa.fa-book
 
-  = render 'partial/footer'
+  = render 'shared/footer'
 
 = render 'shared/mobile'
