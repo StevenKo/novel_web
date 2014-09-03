@@ -58,19 +58,14 @@
         %ul.nav.nav-pills
           %li.active
             %a{:href => "/"} 全部分類
-          - Category.all.each do |category|
+          - @categories.each do |category|
             %li
               = link_to category.name,category_path(category)
       .pin-wrapper
-        - Novel.limit(30).order("updated_at desc").each do |novel|
-          .panel.pin
-            = image_tag novel.pic, :class=> "img-responsive"
-            .panel-body.text-center
-              %h4 #{novel.name}
-              %span.sub-title #{novel.author}
-            .btn-group.btn-group-justified
-              = link_to category_novel_path(novel.category,novel), class: "btn" do
-                %i.fa.fa-book
+        = render @novels
+          
+    #infinite-scrolling.center-div
+      = will_paginate @novels
 
   = render 'shared/footer'
 

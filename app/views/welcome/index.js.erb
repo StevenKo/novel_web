@@ -1,0 +1,16 @@
+$container = $('.pin-wrapper');
+$container.masonry({
+  itemSelector: '.panel.pin'
+});
+$container.append('<%= j render @novels %>').masonry( 'reloadItems' );
+$container = $('.pin-wrapper');
+$container.masonry({
+  itemSelector: '.panel.pin'
+});
+
+<% if @novels.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @novels %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>
