@@ -17,7 +17,7 @@
           .row.pane
             .col-sm-4
               .pane_img
-                = image_tag "cover.jpg", :class => "img-responsive"
+                = image_tag @novel.pic , :class => "img-responsive"
             .col-sm-8
               .pane_detail
                 %h4.title.title_book #{@novel.name}
