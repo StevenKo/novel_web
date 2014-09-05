@@ -1,0 +1,54 @@
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page.dark-bg
+    .container
+      = render 'shared/sidebar'
+      %section.right-wrapper.full.col-xs-12.col-sm-10
+        %ol.breadcrumb.row.full
+          %li
+            %a{:href => "/"} 首頁
+          %li
+            %a{:href => "/"} 小說列表分類
+          %li
+            %a{:href => "/"} 小說詳細頁
+        .content
+          .row.pane
+            .col-sm-4
+              .pane_img
+                = image_tag "cover.jpg", :class => "img-responsive"
+            .col-sm-8
+              .pane_detail
+                %h4.title.title_book #{@novel.name}
+                %p #{@novel.description}
+                %hr
+                %button.btn.btn-default.btn-sm(type="button")
+                  %i.fa.fa-user.fa-fw 
+                  #{@novel.author}
+                %button.btn.btn-info.btn-sm(type="button")
+                  %i.fa.fa-plus.fa-fw 
+                  點擊閱讀
+          .content-body
+            %hr
+            .row
+              .col-md-4
+                %ul.list-group.panel
+                  - @articles[0].each do |article|
+                    %li.list-group-item
+                      = link_to article.title, "#" 
+              .col-md-4
+                %ul.list-group.panel
+                  - @articles[1].each do |article|
+                    %li.list-group-item
+                      = link_to article.title, "#" 
+
+              .col-md-4
+                %ul.list-group.panel
+                  - @articles[2].each do |article|
+                    %li.list-group-item
+                      = link_to article.title, "#" 
+
+  = render 'shared/footer'
+
+= render 'shared/mobile'

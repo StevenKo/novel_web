@@ -1,0 +1,9 @@
+.col-sm-6.col-md-3#marsony-item
+  .panel.pin
+    = image_tag novel.pic, :class=> "img-responsive"
+    .panel-body.text-center
+      %h4 #{novel.name}
+      %span.sub-title #{novel.author}
+    .btn-group.btn-group-justified
+      = link_to category_novel_path(novel.category,novel), class: "btn" do
+        %i.fa.fa-book
