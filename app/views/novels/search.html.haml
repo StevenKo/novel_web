@@ -1,0 +1,26 @@
+
+
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page.dark-bg
+    .container
+      = render 'shared/sidebar'
+      %section.right-wrapper.full.col-xs-12.col-sm-10
+        %ol.breadcrumb.row.full
+          %li
+            %a{:href => "/"} 首頁
+          %li
+            %a{:href => "/"} 小說列表分類
+        .content
+          .content-body
+            .row
+              = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
+
+        #infinite-scrolling.center-div
+          = will_paginate @novels
+
+  = render 'partial/footer'
+
+= render 'partial/mobile'

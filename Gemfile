@@ -31,6 +31,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # tool to parse CSS and add vendor prefixes to CSS rules using values
 gem "autoprefixer-rails"
 
+
+# full text search
+gem 'tire'
+
 group :development,:test do
   gem 'pry'
   gem 'pry-nav'

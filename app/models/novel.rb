@@ -12,4 +12,21 @@ class Novel < ActiveRecord::Base
       end 
     end
   end
+
+
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
+  mapping do
+    indexes :id, type: 'integer'
+    indexes :author, :analyzer => "cjk"
+    indexes :name, :analyzer => "cjk"
+  end
+
+  def self.search(params)
+    tire.search(page: params[:page], per_page: 5, load: true) do
+      query { string params[:keyword], default_operator: "AND" }
+    end
+  end
+
 end
