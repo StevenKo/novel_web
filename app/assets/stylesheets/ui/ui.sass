@@ -362,6 +362,34 @@ a
     &:hover
       color: $brand-primary
 
+// Box item
+@import _gridmix
+
+.box_item
+  +make-xs-column(6)
+  +make-sm-column(4)
+  +make-md-column(3)
+  +make-lg-column(2)
+  margin-bottom: $grid-gutter-width/2
+
+.box_img
+  text-align: center
+  background-color: #F8F8F8
+  padding: 10px
+  border: 1px solid $btn-default-border
+
+.box_detail
+  padding: 10px 0
+  .title
+    font-weight: 300
+    a
+      color: #333
+      &:hover
+        color: #000
+  .author
+    font-weight: 300
+    color: #999
+
 // Helper
 .left-line
   border-left: 1px solid $btn-default-border

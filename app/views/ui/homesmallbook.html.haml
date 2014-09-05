@@ -1,0 +1,193 @@
+#push-container 
+
+  = render 'partial/header'
+
+  %section#home-wrapper
+    .container
+      .inner.text-center
+        %p 最完整的小說庫, 最好用的閱讀器
+        %button.btn.btn-primary 閱讀小說
+        %button.btn.btn-success 成為作家
+
+  %section#feature-wrapper
+    .container
+      .row
+        .col-md-5
+          %h3.title.title_panel 推薦小說
+          .row
+            .col-sm-4
+              .pane_img
+                = image_tag "cover.jpg", :class => "img-responsive"
+            .col-sm-8
+              .pane_detail
+                %h4.title.title_book 無限道武者路
+                %p.desc 作為中國最精銳的特種部隊的格鬥教練，他已經站在實戰國術的巔峰。
+                %br
+                %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
+                %button.btn.btn-default.btn-sm(type="button") 
+                  詳情
+                  %i.fa.fa-long-arrow-right
+        .col-md-5
+          %h3.title.title_panel 最新小說
+          .row
+            .col-sm-4
+              .pane_img
+                = image_tag "cover.jpg", :class => "img-responsive"
+            .col-sm-8
+              .pane_detail
+                %h4.title.title_book 無限道武者路
+                %p.desc 作為中國最精銳的特種部隊的格鬥教練，他已經站在實戰國術的巔峰。
+                %br
+                %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
+                %button.btn.btn-default.btn-sm(type="button") 
+                  詳情
+                  %i.fa.fa-long-arrow-right
+        .col-md-2
+          %h3.title.title_panel 贊助廣告
+          .ad
+
+
+  %section#page
+    .container
+      .nav-background
+        %ul.nav.nav-pills
+          %li.active
+            %a{:href => "/"} 全部分類
+          %li
+            %a{:href => "/"} 玄幻奇幻
+          %li
+            %a{:href => "/"} 仙俠武俠
+          %li
+            %a{:href => "/"} 遊戲
+          %li
+            %a{:href => "/"} 競技
+      .box_wrapper
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/1.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/4.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/3.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/2.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/1.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/4.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/2.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/4.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/1.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/2.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/3.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/3.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/2.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/4.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/3.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/1.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/2.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+        .box_item
+          .box_img
+            = link_to (image_tag 'smallcover/3.jpg', :class => "img-responsive"), '#'
+          .box_detail
+            %h5.title
+              = link_to '無限道武者路', '#'
+            %h6.author 作者五
+  = render 'partial/footer'
+
+= render 'partial/mobile'
