@@ -1,0 +1,138 @@
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page
+    .container
+      .nav-background
+        %ul.nav.nav-pills
+          %li.active
+            %a{:href => "/"} 全部推薦
+          - RecommendCategory.all.each do |category|
+            %li
+              %a{:href => "/"}
+                = category.name
+
+      .pin-wrapper
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+        .panel.pin
+          = image_tag "cover.jpg", :class=> "img-responsive"
+          .panel-body.text-center
+            %h4 界厚転
+            %span.sub-title 山線情明書生齢
+          .btn-group.btn-group-justified
+            %a.btn
+              %i.fa.fa-plus-circle
+            %a.btn
+              %i.fa.fa-heart
+            %a.btn
+              %i.fa.fa-book
+
+  = render 'shared/footer'

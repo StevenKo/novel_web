@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714073539) do
+ActiveRecord::Schema.define(version: 20140903013404) do
 
   create_table "admins", force: true do |t|
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "article_texts", force: true do |t|
     t.text     "text",       limit: 16777215
     t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "article_texts", ["article_id"], name: "index_article_texts_on_article_id", using: :btree
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20140714073539) do
     t.string   "link"
     t.string   "title"
     t.string   "subject"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "num",        default: 0
     t.boolean  "is_show",    default: true
   end
@@ -47,14 +47,15 @@ ActiveRecord::Schema.define(version: 20140714073539) do
     t.string   "name"
     t.string   "link"
     t.string   "cat_link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_popular", default: false
   end
 
   create_table "hot_ships", force: true do |t|
     t.integer  "novel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "hot_ships", ["novel_id"], name: "index_hot_ships_on_novel_id", using: :btree
@@ -74,8 +75,8 @@ ActiveRecord::Schema.define(version: 20140714073539) do
     t.boolean  "is_category_this_week_hot"
     t.boolean  "is_classic"
     t.boolean  "is_classic_action"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "crawl_times",               default: 0
     t.integer  "num",                       default: 0
     t.boolean  "is_show",                   default: true
@@ -89,15 +90,15 @@ ActiveRecord::Schema.define(version: 20140714073539) do
 
   create_table "recommend_categories", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "recommend_category_novel_ships", force: true do |t|
     t.integer  "novel_id"
     t.integer  "recommend_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   add_index "recommend_category_novel_ships", ["novel_id"], name: "index_recommend_category_novel_ships_on_novel_id", using: :btree
@@ -105,16 +106,16 @@ ActiveRecord::Schema.define(version: 20140714073539) do
 
   create_table "this_month_hot_ships", force: true do |t|
     t.integer  "novel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "this_month_hot_ships", ["novel_id"], name: "index_this_month_hot_ships_on_novel_id", using: :btree
 
   create_table "this_week_hot_ships", force: true do |t|
     t.integer  "novel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "this_week_hot_ships", ["novel_id"], name: "index_this_week_hot_ships_on_novel_id", using: :btree
@@ -122,8 +123,8 @@ ActiveRecord::Schema.define(version: 20140714073539) do
   create_table "users", force: true do |t|
     t.string   "registration_id"
     t.text     "read_novels"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "device_id"
     t.text     "downloaded_novels"
     t.text     "collected_novels"
