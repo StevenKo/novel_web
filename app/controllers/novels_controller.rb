@@ -1,5 +1,7 @@
 class NovelsController < ApplicationController
   def show
+    @novel = Novel.find(params[:id])
+    @articles = @novel.articles.each_slice(3).to_a
   end
 
   def index
