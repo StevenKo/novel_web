@@ -1,0 +1,67 @@
+#push-container 
+
+  = render 'partial/header'
+
+  %section#page.dark-bg
+    .container
+      = render 'partial/sidebar'
+      %section.right-wrapper.full.col-xs-12.col-sm-10
+        %ol.breadcrumb.row.full
+          %li
+            %a{:href => "/"} 首頁
+          %li
+            %a{:href => "/"} 作者介紹
+        .content
+          .panel.author_panel
+            .author_panel-top
+              = image_tag "top_cover.jpg", :class => "img-responsive "
+              = image_tag "avatar.jpg", :class => "img-responsive avatar img-circle"
+              .author_panel-info
+                %h5.author
+                  %i.fa.fa-fw.fa-user
+                  須性實生
+            .panel-body
+              %h5.title.title_panel 作者介紹
+              %p.desc 緊減節南近國表無客著高國結年究買著和大只！聲知進金……中的色沒中；表西直能裡都里天有客開館著改奇不方家美明到滿，易獎合團具機舉神已時雄一因難……營年面離意經發我行分多拉業味個會續世政單點。須性實生；通出上代、理不到成畫機著精球較我還訴當人大他來越，人喜選登他院那間心手益說布不清面活是這一小時英平難級時氣程訴機，人世反依覺水作友時了決別戰為的組不想兩高須細時新達存！
+              .row.author_panel-book-wrapper
+                .box_wrapper
+                  .box_item
+                    .box_img
+                      = link_to (image_tag 'smallcover/1.jpg', :class => "img-responsive"), '#'
+                    .box_detail
+                      %h5.title
+                        = link_to '無限道武者路', '#'
+                      %h6.author 作者五
+                  .box_item
+                    .box_img
+                      = link_to (image_tag 'smallcover/4.jpg', :class => "img-responsive"), '#'
+                    .box_detail
+                      %h5.title
+                        = link_to '無限道武者路', '#'
+                      %h6.author 作者五
+                  .box_item
+                    .box_img
+                      = link_to (image_tag 'smallcover/3.jpg', :class => "img-responsive"), '#'
+                    .box_detail
+                      %h5.title
+                        = link_to '無限道武者路', '#'
+                      %h6.author 作者五
+                  .box_item
+                    .box_img
+                      = link_to (image_tag 'smallcover/2.jpg', :class => "img-responsive"), '#'
+                    .box_detail
+                      %h5.title
+                        = link_to '無限道武者路', '#'
+                      %h6.author 作者五
+                  .box_item
+                    .box_img
+                      = link_to (image_tag 'smallcover/1.jpg', :class => "img-responsive"), '#'
+                    .box_detail
+                      %h5.title
+                        = link_to '無限道武者路', '#'
+                      %h6.author 作者五
+              
+         
+  = render 'partial/footer'
+
+= render 'partial/mobile'

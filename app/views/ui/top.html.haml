@@ -1,0 +1,487 @@
+#push-container 
+
+  = render 'partial/header'
+
+  %section#page.dark-bg
+    .container
+      = render 'partial/sidebar'
+      %section.right-wrapper.full.col-xs-12.col-sm-10
+        %ol.breadcrumb.row.full
+          %li
+            %a{:href => "/"} 首頁
+          %li
+            %a{:href => "/"} 小說排行
+        .content
+          .row
+            .col-md-4
+              %h2.title.title_book 熱門小說
+              %ul.list-group
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 1
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 2
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 3
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 4
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 5
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 6
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 7
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 8
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 9
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+            .col-md-4
+              %h2.title.title_book 本月推薦
+              %ul.list-group
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 1
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 2
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 3
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 4
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 5
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 6
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 7
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 8
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 9
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+            .col-md-4
+              %h2.title.title_book 本週排行
+              %ul.list-group
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 1
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 2
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 3
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 4
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 5
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 6
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 7
+                  .media-small
+                    = image_tag "smallcover/3.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 8
+                  .media-small
+                    = image_tag "smallcover/2.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+                %li.list-group-item.media-item
+                  %a.media-link{:href => "/"}
+                  %span.number 9
+                  .media-small
+                    = image_tag "smallcover/1.jpg", :class => "img-responsive"
+                    %i.fa.fa-fw.fa-book
+                  .box_detail
+                    %h5.title
+                      = link_to '無限道武者路', '#'
+                    %h6.author 作者五
+                    .media-action
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-star
+                        加入收藏
+                      %button.btn.btn-info.btn-xs(type="button")
+                        %span.glyphicon.glyphicon-heart-empty
+                        推薦
+
+  = render 'partial/footer'
+
+= render 'partial/mobile'
