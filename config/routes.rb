@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get 'apply-writer', to: 'welcome#apply'
   post 'apply-writer', to: 'welcome#apply_create'
 
+  get 'categories/recommend(/:category)', to: 'categories#recommend', as: 'recommend'
+  get 'categories/recent', to: 'categories#recent', as: 'recent'
+  get 'categories/newest', to: 'categories#newest', as: 'newest'
+
   resources :categories do
-    collection do 
-      get 'recommend'
-    end
     resources :novels
   end
 

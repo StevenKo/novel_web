@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   end
 
   def recommend
+    ggg
   end
 
   def show
