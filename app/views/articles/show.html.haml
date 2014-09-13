@@ -34,7 +34,12 @@
               %h2.title.book-title 書名: #{@novel.name}
               %h3.title.section_title #{@article.subject + " :"+@article.title}
             %p
-              = @article.text.gsub(/\n/, '<br/>').html_safe
+              - if @article.text.include? "jpg"
+                - imgs = @article.text.split("*&&$$*")
+                - imgs[0..imgs.size-2].each do |img|
+                  = image_tag img
+              - else
+                = @article.text.gsub(/\n/, '<br/>').html_safe
             .book-view_tool-bar
               = link_to category_novel_path(@novel.category,@novel), class: "btn btn-primary btn-sm" do
                 %i.fa.fa-bars.fa-fw
