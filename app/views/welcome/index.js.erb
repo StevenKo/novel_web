@@ -1,12 +1,13 @@
-$container = $('.pin-wrapper');
-$container.masonry({
-  itemSelector: '.panel.pin'
-});
+$container = $('.box_wrapper');
 $container.append('<%= j render @novels %>').masonry( 'reloadItems' );
-$container = $('.pin-wrapper');
-$container.masonry({
-  itemSelector: '.panel.pin'
-});
+
+reload_masonry = function() {
+  $container.masonry({
+    itemSelector: '.box_item'
+  });
+};
+
+window.setTimeout(reload_masonry, 100);
 
 <% if @novels.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @novels %>');

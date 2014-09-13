@@ -150,6 +150,10 @@ body {
   text-align: center;
   width: 100%;
   margin-top: 30px;
+
+  .load-more{
+    margin-bottom: 30px;
+  }
 }
 
 .jumbotron.narrow {
@@ -162,3 +166,12 @@ body {
 .img-responsive{
   display: inline-block;
 }
+
+#with-button{
+  display: none;
+}
+
+#infinite-scrolling ul.pagination{
+  display: none;
+}
+

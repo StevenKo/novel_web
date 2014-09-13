@@ -14,50 +14,16 @@
           %li
             %a{:href => "/"} 小說列表分類
         .content
-          .content-top
-            .tag-bar
-              .tag-title
-                %span 標簽
-              .tag-list
-                %ul.list-inline
-                  %li
-                    %a.active.label.label-primary{:href => "/"} 遊戲
-                  %li 
-                    %a{:href => "/"} 仙俠武俠
-                  %li 
-                    %a{:href => "/"} 玄幻奇幻
-                  %li 
-                    %a{:href => "/"} 都市言情
-                  %li 
-                    %a{:href => "/"} 科幻小說
-                  %li 
-                    %a{:href => "/"} 軍事歷史
-                  %li 
-                    %a{:href => "/"} 少女
-            .tag-bar
-              .tag-title
-                %span 標簽2
-              .tag-list
-                %ul.list-inline
-                  %li
-                    %a{:href => "/"} 遊戲
-                  %li 
-                    %a.active.label.label-primary{:href => "/"} 仙俠武俠
-                  %li 
-                    %a{:href => "/"} 玄幻奇幻
           .content-body
             .row
-              - Novel.limit(30).order("updated_at desc").each do |novel|
-                .col-sm-6.col-md-3
-                  .panel.pin
-                    = image_tag novel.pic, :class=> "img-responsive"
-                    .panel-body.text-center
-                      %h4 #{novel.name}
-                      %span.sub-title #{novel.author}
-                    .btn-group.btn-group-justified
-                      = link_to category_novel_path(novel.category,novel), class: "btn" do
-                        %i.fa.fa-book
+              = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
+        #with-button
+          = will_paginate @novels
 
-  = render 'partial/footer'
+        - if @novels.next_page
+          .center-div
+            #load-more-btn.btn.btn-primary.btn-lg.load-more 更多小說
 
-= render 'partial/mobile'
+  = render 'shared/footer'
+
+= render 'shared/mobile'

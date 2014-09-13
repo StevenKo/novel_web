@@ -18,9 +18,13 @@
             .row
               = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
 
-        #infinite-scrolling.center-div
+        #with-button
           = will_paginate @novels
 
-  = render 'partial/footer'
+        - if @novels.next_page
+          .center-div
+            #load-more-btn.btn.btn-primary.btn-lg.load-more 更多小說
 
-= render 'partial/mobile'
+  = render 'shared/footer'
+
+= render 'shared/mobile'
