@@ -1,0 +1,55 @@
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page.dark-bg
+    .container
+      = render 'shared/sidebar_bookview', novel_articles: @novel_articles, novel: @novel, article_id: @article.id
+      %section.right-wrapper.full.col-xs-12.col-sm-10
+        %ol.breadcrumb.row.full
+          %li
+            %a{:href => "/"} 首頁
+          %li
+            %a{:href => "/"} 小說列表分類
+          %li
+            %a{:href => "/"} 小說詳細頁
+          %li.active
+            %a{:href => "/"} 小說第一章
+        .content
+          .book-view
+            .book-view_tool-bar
+              = link_to category_novel_path(@novel.category,@novel), class: "btn btn-primary btn-sm" do
+                %i.fa.fa-bars.fa-fw
+                目錄
+              - if @previous_article
+                = link_to novel_article_path(@novel,@previous_article), class: "btn btn-default btn-sm" do
+                  %i.fa.fa-long-arrow-left
+                  上一頁
+              - if @next_article
+                = link_to novel_article_path(@novel,@next_article), class: "btn btn-default btn-sm" do
+                  下一頁
+                  %i.fa.fa-long-arrow-right
+
+            .bool-view_header.text-center
+              %h2.title.book-title 書名: #{@novel.name}
+              %h3.title.section_title #{@article.subject + " :"+@article.title}
+            %p
+              = @article.text.gsub(/\n/, '<br/>').html_safe
+            .book-view_tool-bar
+              = link_to category_novel_path(@novel.category,@novel), class: "btn btn-primary btn-sm" do
+                %i.fa.fa-bars.fa-fw
+                目錄
+              - if @previous_article
+                = link_to novel_article_path(@novel,@previous_article), class: "btn btn-default btn-sm" do
+                  %i.fa.fa-long-arrow-left
+                  上一頁
+              - if @next_article
+                = link_to novel_article_path(@novel,@next_article), class: "btn btn-default btn-sm" do
+                  下一頁
+                  %i.fa.fa-long-arrow-right
+
+
+
+  = render 'shared/footer'
+
+= render 'shared/mobile'
