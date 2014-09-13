@@ -1,0 +1,33 @@
+= content_for :head do
+  <title>小說王 —— 申請成為小說王作家 | 網路作家 | APP作家 </title>
+  <meta name="description" content="小說王需要有更多作家的參與, 讓網路作家們的作品能給更多的讀者看到與分享, 希望作家們能來投稿, 成為小說王的簽約作家">
+  <meta name="keywords" content="小說投稿,網路作家,出書,投稿,出版,出版社,作者,作家,小說王">
+
+#push-container 
+  = render 'shared/header'
+
+  .jumbotron
+    %h2.text-primary 小說王徵才
+    %p.lead 1.網站編輯
+    %p
+      %h4.text-info 工作內容
+      %h5
+        小說王蒐集各方小說，也讓小說作者們來投稿，需要對閱讀小說有興趣的編輯，對市場有敏銳的編輯，對這些小說做編排，篩選，並經營粉絲頁與讀者接觸
+      %h4.text-info 應徵條件
+      %ul
+        %li 了解 Facebook 粉絲頁經營
+        %li 喜愛閱讀網路小說
+      %h4.text-info 加分條件
+      %ul
+        %li 對網路小說發展有了解
+        %li 本身是網路小說家
+        %li 會使用photoshop 或其它修圖工具
+        %li 經營過Facebook 粉絲頁
+        %li 做過文學評論
+      %h4.text-info 待遇
+      .text-danger NT$ 28000 ~ 50000
+      %h4.text-info 如何應徵
+      請寄覆歷至:
+      = mail_to "stevenko@kosbrother.com"
+
+= render 'shared/mobile'
