@@ -8,13 +8,13 @@
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
           %li
-            %a{:href => "/"} 首頁
+            = link_to "首頁", root_path
           %li
-            %a{:href => "/"} 小說列表分類
+            = link_to @novel.category.name, category_path(@novel.category)
           %li
-            %a{:href => "/"} 小說詳細頁
+            = link_to @novel.name, category_novel_path(@novel.category,@novel)
           %li.active
-            %a{:href => "/"} 小說第一章
+            = link_to @article.subject + " :"+@article.title, novel_article_path(@novel,@article)
         .content
           .book-view
             .book-view_tool-bar

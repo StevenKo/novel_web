@@ -10,9 +10,12 @@
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
           %li
-            %a{:href => "/"} 首頁
+            = link_to "首頁", root_path
           %li
-            %a{:href => "/"} 小說列表分類
+            = link_to "全部分類", categories_path
+          - if @category
+            %li
+              = link_to @category.name, category_path(@category)
         .content
           .content-body
             .row
