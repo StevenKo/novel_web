@@ -26,8 +26,8 @@ class CategoriesController < ApplicationController
 
   def recommend
     if params[:category]
-      category = RecommendCategory.find(params[:category])
-      @novels = category.novels
+      @category = RecommendCategory.find(params[:category])
+      @novels = @category.novels
     else
       novels_id = RecommendCategoryNovelShip.all.map{|ship| ship.novel_id}.join(',')
       @novels = Novel.where("id in (#{novels_id})").show.page(params[:page]).per_page(12)

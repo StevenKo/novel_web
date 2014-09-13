@@ -1,6 +1,7 @@
 class NovelsController < ApplicationController
   def show
     @novel = Novel.find(params[:id])
+    @category = @novel.category
     novel_articles = @novel.articles
     @articles = novel_articles.each_slice(novel_articles.size/3+1).to_a
   end
