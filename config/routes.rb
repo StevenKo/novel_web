@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'ui(/:action)', controller: 'ui'
   
+  get 'jobs', to: 'welcome#jobs'
   root 'welcome#index'
   get 'download', to: 'welcome#download'
   get 'apply-writer', to: 'welcome#apply'
