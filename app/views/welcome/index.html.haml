@@ -47,9 +47,6 @@
                 = link_to category_novel_path(@newest_novel.category,@newest_novel), class: "btn btn-default btn-sm" do
                   詳情
                   %i.fa.fa-long-arrow-right
-        .col-md-2
-          %h3.title.title_panel 贊助廣告
-          .ad
 
 
   %section#page
@@ -61,11 +58,15 @@
           - @categories.each do |category|
             %li
               = link_to category.name,category_path(category)
-      .pin-wrapper
+      .box_wrapper
         = render @novels
           
-    #infinite-scrolling.center-div
+    #with-button
       = will_paginate @novels
+
+    - if @novels.next_page
+      .center-div
+        #load-more-btn.btn.btn-primary.btn-lg.load-more 更多小說
 
   = render 'shared/footer'
 

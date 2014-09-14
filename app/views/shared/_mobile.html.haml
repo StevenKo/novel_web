@@ -1,14 +1,30 @@
 %section#mobile-wrapper
   %ul.list-group
-    %li.list-group-item.index-nav
+    %li.list-group-item
       = link_to root_path do 
         %i.fa.fa-home.fa-fw
         首頁
-    %li.list-group-item.index-nav
-      = link_to root_path do 
+    %li.list-group-item.ind
+      = link_to download_path do 
         %i.fa.fa-home.fa-fw
         APP 下載
-    %li.list-group-item.apply-nav
+    %li.list-group-item
+      = link_to categories_path do 
+        %i.fa.fa-cubes.fa-fw
+        小說分類
+    %li.list-group-item
+      = link_to recommend_path do 
+        %i.fa.fa-thumbs-up.fa-fw
+        推薦小說
+    %li.list-group-item
       = link_to apply_writer_path do
         %i.fa.fa-edit.fa-fw
         作者投稿
+    %li.list-group-item
+      = link_to jobs_path do
+        %i.fa.fa-users.fa-fw
+        加入我們
+    %li.list-group-item.js-close-menu
+      %a{:href => "/"} 
+        %i.fa.fa-caret-right.fa-fw
+        關閉目錄

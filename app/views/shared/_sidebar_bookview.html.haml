@@ -1,0 +1,27 @@
+%section.left-wrapper.full.col-xs-2.hidden-xs
+  .left-wrapper-top.text-right.row
+    %a#close-sidebar-btn.btn.btn-default.btn-sm.visible-xs(type="button")
+      %i.fa.fa-fw.fa-arrow-left
+      %span.hidden-sm 收起工具欄
+  %ul.list-group
+    %li.list-group-item.list-group-title 前後十章節
+    - novel_articles.each_with_index do |article,i|
+      - if article.id == article_id
+        - if i >= 9
+          - (i-9..i-1).each do |j|
+            %li.list-group-item
+              = link_to novel_articles[j].subject + " :"+novel_articles[j].title,novel_article_path(novel,novel_articles[j])
+        - else
+          - (0..i-1).each do |j|
+            %li.list-group-item
+              = link_to novel_articles[j].subject + " :"+novel_articles[j].title,novel_article_path(novel,novel_articles[j])
+        %li.list-group-item.active
+          = link_to article.subject + " :"+article.title,novel_article_path(novel,article)
+        - if (novel_articles.size - 1 - i) >= 9
+          - (i+1..i+9).each do |j|
+            %li.list-group-item
+              = link_to novel_articles[j].subject + " :"+novel_articles[j].title,novel_article_path(novel,novel_articles[j])
+        - else
+          - (i+1..novel_articles.size - 1).each do |j|
+            %li.list-group-item
+              = link_to novel_articles[j].subject + " :"+novel_articles[j].title,novel_article_path(novel,novel_articles[j])

@@ -8,16 +8,16 @@
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
           %li
-            %a{:href => "/"} 首頁
+            = link_to "首頁", root_path
           %li
-            %a{:href => "/"} 小說列表分類
+            = link_to @category.name, category_path(@category)
           %li
-            %a{:href => "/"} 小說詳細頁
+            = link_to @novel.name, category_novel_path(@category,@novel)
         .content
           .row.pane
             .col-sm-4
               .pane_img
-                = image_tag "cover.jpg", :class => "img-responsive"
+                = image_tag @novel.pic , :class => "img-responsive"
             .col-sm-8
               .pane_detail
                 %h4.title.title_book #{@novel.name}
@@ -36,18 +36,18 @@
                 %ul.list-group.panel
                   - @articles[0].each do |article|
                     %li.list-group-item
-                      = link_to article.title, "#" 
+                      = link_to article.subject + " :"+article.title, novel_article_path(@novel,article)
               .col-md-4
                 %ul.list-group.panel
                   - @articles[1].each do |article|
                     %li.list-group-item
-                      = link_to article.title, "#" 
+                      = link_to article.subject + " :"+article.title, novel_article_path(@novel,article)
 
               .col-md-4
                 %ul.list-group.panel
                   - @articles[2].each do |article|
                     %li.list-group-item
-                      = link_to article.title, "#" 
+                      = link_to article.subject + " :"+article.title, novel_article_path(@novel,article)
 
   = render 'shared/footer'
 

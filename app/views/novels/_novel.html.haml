@@ -1,8 +1,7 @@
-.panel.pin
-  = image_tag novel.pic, :class=> "img-responsive"
-  .panel-body.text-center
-    %h4 #{novel.name}
-    %span.sub-title #{novel.author}
-  .btn-group.btn-group-justified
-    = link_to category_novel_path(novel.category,novel), class: "btn" do
-      %i.fa.fa-book
+.box_item
+  .box_img
+    = link_to (image_tag novel.pic, :class => "img-responsive"), category_novel_path(novel.category,novel)
+  .box_detail
+    %h5.title
+      = link_to novel.name, category_novel_path(novel.category,novel)
+    %h6.author #{novel.author}

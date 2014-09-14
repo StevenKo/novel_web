@@ -1,12 +1,15 @@
 $container = $('.content-body .row');
-$container.masonry({
-  itemSelector: '#marsony-item'
-});
 $container.append('<%= j render partial: "novels/novel_for_category", collection: @novels, as: :novel %>').masonry( 'reloadItems' );
-$container = $('.content-body .row');
-$container.masonry({
-  itemSelector: '#marsony-item'
-});
+
+reload_masonry = function() {
+  $container.masonry({
+    itemSelector: '#marsony-item'
+  });
+};
+
+window.setTimeout(reload_masonry, 100);
+window.setTimeout(reload_masonry, 500);
+
 
 <% if @novels.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @novels %>');

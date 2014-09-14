@@ -10,17 +10,24 @@
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
           %li
-            %a{:href => "/"} 首頁
+            = link_to "首頁", root_path
           %li
-            %a{:href => "/"} 小說列表分類
+            = link_to "全部分類", categories_path
+          - if @category
+            %li
+              = link_to @category.name, category_path(@category)
         .content
           .content-body
             .row
               = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
 
-        #infinite-scrolling.center-div
+        #with-button
           = will_paginate @novels
 
-  = render 'partial/footer'
+        - if @novels.next_page
+          .center-div
+            #load-more-btn.btn.btn-primary.btn-lg.load-more 更多小說
 
-= render 'partial/mobile'
+  = render 'shared/footer'
+
+= render 'shared/mobile'
