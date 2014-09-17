@@ -19,6 +19,7 @@ reload_masonry = ->
   return
 
 $ ->
+  $gif = '<%= asset_url('ajax-loader.gif') %>'
   window.setTimeout(reload_masonry, 100);
  
   if $('#with-button').size() > 0
@@ -29,7 +30,7 @@ $ ->
         loading_posts = true
         more_posts_url = $('.pagination .next_page a').attr('href')
         $this = $(this)
-        $this.html('<img src="/assets/ajax-loader.gif" alt="Loading..." title="Loading..." />').addClass('disabled')
+        $this.html('<img src="' + $gif + '" alt="Loading..." title="Loading..." />').addClass('disabled')
         $.getScript more_posts_url, ->
           $this.text('More posts').removeClass('disabled') if $this
           loading_posts = false
