@@ -2,8 +2,10 @@ $container = $('.content-body .row');
 $container.append('<%= j render partial: "novels/novel_for_category", collection: @novels, as: :novel %>').masonry( 'reloadItems' );
 
 reload_masonry = function() {
-  $container.masonry({
-    itemSelector: '#marsony-item'
+  $container.imagesLoaded(function() {
+    $container.masonry({
+      itemSelector: '#marsony-item'
+    });
   });
 };
 

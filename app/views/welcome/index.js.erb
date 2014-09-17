@@ -2,10 +2,13 @@ $container = $('.box_wrapper');
 $container.append('<%= j render @novels %>').masonry( 'reloadItems' );
 
 reload_masonry = function() {
-  $container.masonry({
-    itemSelector: '.box_item'
+  $container.imagesLoaded(function() {
+    $container.masonry({
+      itemSelector: ".box_item"
+    });
   });
 };
+
 
 window.setTimeout(reload_masonry, 100);
 

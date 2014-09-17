@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require mobile
+//= require imagesloaded.pkgd.min
 //= require masonry.pkgd.min
 //= require welcome
 //= require categories

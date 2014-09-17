@@ -10,9 +10,17 @@ $(document).ready(ready)
 $(document).on('page:load',ready)
   
 
+reload_masonry = ->
+  $container = $(".box_wrapper")
+  $container.imagesLoaded ->
+    $container.masonry itemSelector: ".box_item"
+    return
 
+  return
 
-$ ->  
+$ ->
+  window.setTimeout(reload_masonry, 100);
+ 
   if $('#with-button').size() > 0
     loading_posts = false
  
