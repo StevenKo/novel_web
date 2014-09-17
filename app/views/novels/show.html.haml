@@ -1,3 +1,8 @@
+= content_for :head do
+  <title>#{@novel.name} -- #{@category.name} | 小說王搜集各類小說 |小說網站 </title>
+  <meta name="description" content="#{@novel.description}">
+  <meta name="keywords" content="#{@novel.name},#{@category.name},#{@novel.author}">
+
 #push-container 
 
   = render 'shared/header'
