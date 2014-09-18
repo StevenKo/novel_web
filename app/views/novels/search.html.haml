@@ -1,4 +1,11 @@
-
+= content_for :head do
+  <title>小說搜索 | 小說王搜集各類小說 |小說網站 </title>
+  <meta name="description" content="利用小說王搜索網路上各類小說,言情,輕小說,穿越,網路作家">
+  <meta name="keywords" content="九把刀,總裁,古靈,重生,典心,刀劍神域,張廉,席絹,三國,金庸,護玄,黑潔明">
+  <meta property="og:title"  content="小說搜索 | 小說王搜集各類小說 |小說網站" />
+  <meta property="og:image"  content="#{image_url("app_icon.png")}" />
+  <meta property="og:url"  content="#{request.url}" />
+  <meta property="og:type" content="website" />
 
 #push-container 
 
@@ -9,10 +16,12 @@
       = render 'shared/sidebar'
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
-          %li
-            = link_to "首頁", root_path
-          %li
-            搜尋
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to root_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 首頁
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            %span{:itemprop => "title"} 搜尋
+            
         .content
           .content-body
             .row

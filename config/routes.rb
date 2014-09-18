@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get 'categories/recent', to: 'categories#recent', as: 'recent'
   get 'categories/newest', to: 'categories#newest', as: 'newest'
 
-  resources :categories do
-    resources :novels
+  resources :categories,only: ["index","show"] do
+    resources :novels, only: ["show"]
   end
 
   resources :novels, only: [] do

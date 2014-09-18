@@ -1,4 +1,11 @@
-
+= content_for :head do
+  <title> 推薦#{@category.name} | 小說王搜集各類小說 |小說網站 </title>
+  <meta name="description" content="#{@category.name}, 類別小說">
+  <meta name="keywords" content="#{@category.name}">
+  <meta property="og:title"  content="推薦#{@category.name} | 小說王搜集各類小說 |小說網站" />
+  <meta property="og:image"  content="#{image_url("app_icon.png")}" />
+  <meta property="og:url"  content="#{request.url}" />
+  <meta property="og:type" content="website" />
 
 #push-container 
 
@@ -9,13 +16,16 @@
       = render 'shared/sidebar'
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
-          %li
-            = link_to "首頁", root_path
-          %li
-            = link_to "推薦熱門小說", recommend_path
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to root_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 首頁
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to recommend_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 推薦熱門小說
           - if @category
-            %li
-              = link_to @category.name, recommend_path(@category)
+            %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+              = link_to recommend_path(@category),:itemprop => "url" do
+                %span{:itemprop => "title"} #{@category.name}
         .content
           .content-body
             .row

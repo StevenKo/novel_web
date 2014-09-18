@@ -1,4 +1,19 @@
 class Article < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize.to_s
+  end
+
+  def slug_candidates
+    [
+      :title,
+      [:title, :subject],
+      [:title, :subject, novel.name]
+    ]
+  end
+
   belongs_to :novel
   scope :by_id_desc, order('id DESC')
   scope :by_num_desc, order('num DESC')

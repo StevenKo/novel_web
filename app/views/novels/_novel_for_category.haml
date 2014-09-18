@@ -1,9 +1,9 @@
 .col-sm-6.col-md-3#marsony-item
-  .panel.pin
-    = image_tag novel.pic, :class=> "img-responsive"
+  .panel.pin{:itemscope => "", :itemtype => "http://schema.org/Book"}
+    = image_tag novel.pic, :class=> "img-responsive",:itemprop => "image",alt: novel.name
     .panel-body.text-center
-      %h4 #{novel.name}
-      %span.sub-title #{novel.author}
+      %h4{:itemprop => "name"} #{novel.name}
+      %span.sub-title{:itemprop => "author"} #{novel.author}
     .btn-group.btn-group-justified
-      = link_to category_novel_path(novel.category,novel), class: "btn" do
+      = link_to category_novel_path(novel.category,novel), class: "btn",:itemprop => "url" do
         %i.fa.fa-book
