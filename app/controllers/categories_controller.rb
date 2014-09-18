@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
 
   def recommend
     if params[:category]
-      @category = RecommendCategory.find(params[:category])
+      @category = RecommendCategory.friendly.find(params[:category])
       @novels = @category.novels
     else
       novels_id = RecommendCategoryNovelShip.all.map{|ship| ship.novel_id}.join(',')
@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.friendly.find(params[:id])
     @novels = @category.novels.order("updated_at desc").page(params[:page]).per_page(12)
     respond_to do |format|
       format.html

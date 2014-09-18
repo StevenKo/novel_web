@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903013404) do
+ActiveRecord::Schema.define(version: 20140918055954) do
 
   create_table "admins", force: true do |t|
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "article_texts", force: true do |t|
     t.text     "text",       limit: 16777215
     t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "article_texts", ["article_id"], name: "index_article_texts_on_article_id", using: :btree
@@ -33,29 +33,47 @@ ActiveRecord::Schema.define(version: 20140903013404) do
     t.string   "link"
     t.string   "title"
     t.string   "subject"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "num",        default: 0
     t.boolean  "is_show",    default: true
+    t.string   "slug"
   end
 
   add_index "articles", ["link"], name: "index_articles_on_link", using: :btree
   add_index "articles", ["novel_id"], name: "index_articles_on_novel_id", using: :btree
   add_index "articles", ["num"], name: "index_articles_on_num", using: :btree
+  add_index "articles", ["slug"], name: "index_articles_on_slug", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.string   "link"
     t.string   "cat_link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.boolean  "is_popular", default: false
+    t.string   "slug"
   end
+
+  add_index "categories", ["slug"], name: "index_categories_on_slug", using: :btree
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "hot_ships", force: true do |t|
     t.integer  "novel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "hot_ships", ["novel_id"], name: "index_hot_ships_on_novel_id", using: :btree
@@ -75,11 +93,12 @@ ActiveRecord::Schema.define(version: 20140903013404) do
     t.boolean  "is_category_this_week_hot"
     t.boolean  "is_classic"
     t.boolean  "is_classic_action"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "crawl_times",               default: 0
     t.integer  "num",                       default: 0
     t.boolean  "is_show",                   default: true
+    t.string   "slug"
   end
 
   add_index "novels", ["author"], name: "index_novels_on_author", using: :btree
@@ -87,18 +106,22 @@ ActiveRecord::Schema.define(version: 20140903013404) do
   add_index "novels", ["is_show"], name: "index_novels_on_is_show", using: :btree
   add_index "novels", ["name"], name: "index_novels_on_name", using: :btree
   add_index "novels", ["num"], name: "index_novels_on_num", using: :btree
+  add_index "novels", ["slug"], name: "index_novels_on_slug", using: :btree
 
   create_table "recommend_categories", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "recommend_categories", ["slug"], name: "index_recommend_categories_on_slug", using: :btree
 
   create_table "recommend_category_novel_ships", force: true do |t|
     t.integer  "novel_id"
     t.integer  "recommend_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   add_index "recommend_category_novel_ships", ["novel_id"], name: "index_recommend_category_novel_ships_on_novel_id", using: :btree
@@ -106,16 +129,16 @@ ActiveRecord::Schema.define(version: 20140903013404) do
 
   create_table "this_month_hot_ships", force: true do |t|
     t.integer  "novel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "this_month_hot_ships", ["novel_id"], name: "index_this_month_hot_ships_on_novel_id", using: :btree
 
   create_table "this_week_hot_ships", force: true do |t|
     t.integer  "novel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "this_week_hot_ships", ["novel_id"], name: "index_this_week_hot_ships_on_novel_id", using: :btree
@@ -123,8 +146,8 @@ ActiveRecord::Schema.define(version: 20140903013404) do
   create_table "users", force: true do |t|
     t.string   "registration_id"
     t.text     "read_novels"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "device_id"
     t.text     "downloaded_novels"
     t.text     "collected_novels"
