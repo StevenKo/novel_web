@@ -16,6 +16,7 @@
 //= require mobile
 //= require imagesloaded.pkgd.min
 //= require masonry.pkgd.min
+//= require history.jquery
 //= require welcome
 //= require categories
 //= require ui

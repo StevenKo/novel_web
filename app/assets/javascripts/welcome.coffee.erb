@@ -19,6 +19,17 @@ reload_masonry = ->
   return
 
 $ ->
+  page_regexp = /\d+$/
+
+  pushPage = (page) ->
+    History.pushState null, "InfiniteScrolling | Page " + page, "?page=" + page
+    return
+
+  hash = window.location.hash
+  if hash.match(/page=\d+/i)
+    window.location.hash = '' # Otherwise the hash will remain after the page reload
+    window.location.search = '?page=' + hash.match(/page=(\d+)/i)[1]
+
   $gif = '<%= asset_url('ajax-loader.gif') %>'
   window.setTimeout(reload_masonry, 100);
  
@@ -33,5 +44,6 @@ $ ->
         $this.html('<img src="' + $gif + '" alt="Loading..." title="Loading..." />').addClass('disabled')
         $.getScript more_posts_url, ->
           $this.text('More posts').removeClass('disabled') if $this
+          pushPage(more_posts_url.match(page_regexp)[0])
           loading_posts = false
       return
