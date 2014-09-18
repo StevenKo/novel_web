@@ -2,6 +2,13 @@
   <title>#{@novel.name} -- #{@category.name} | 小說王搜集各類小說 |小說網站 </title>
   <meta name="description" content="#{@novel.description}">
   <meta name="keywords" content="#{@novel.name},#{@category.name},#{@novel.author}">
+  <meta property="og:title"  content="#{@novel.name}-- #{@category.name} | 小說王搜集各類小說 |小說網站" />
+  <meta property="og:image"  content="#{image_url(@novel.pic)}" />
+  <meta property="og:url"  content="#{request.url.split('?').first}" />
+  <meta property="og:description" content="#{@novel.description}" />
+  <meta property="og:type" content="book">
+  <meta property="book:author" content="#{@novel.author}">
+  <meta property="book:tag" content="#{@category.name}">
 
 #push-container 
 
