@@ -27,7 +27,7 @@
           .row{:itemscope => "", :itemtype => "http://schema.org/Book"}
             .col-sm-4
               .pane_img
-                = image_tag @recommend_novel.pic, :class => "img-responsive",:itemprop => "image"
+                = image_tag @recommend_novel.pic, :class => "img-responsive",:itemprop => "image", alt: @recommend_novel.name
             .col-sm-8
               .pane_detail
                 %h4.title.title_book{:itemprop => "name"} #{@recommend_novel.name}
@@ -42,7 +42,7 @@
           .row{:itemscope => "", :itemtype => "http://schema.org/Book"}
             .col-sm-4
               .pane_img
-                = image_tag @newest_novel.pic , :class => "img-responsive",:itemprop => "image"
+                = image_tag @newest_novel.pic , :class => "img-responsive",:itemprop => "image",alt: @newest_novel.name
             .col-sm-8
               .pane_detail
                 %h4.title.title_book{:itemprop => "name"} #{@newest_novel.name}

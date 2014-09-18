@@ -1,6 +1,6 @@
 .col-sm-6.col-md-3#marsony-item
   .panel.pin{:itemscope => "", :itemtype => "http://schema.org/Book"}
-    = image_tag novel.pic, :class=> "img-responsive",:itemprop => "image"
+    = image_tag novel.pic, :class=> "img-responsive",:itemprop => "image",alt: novel.name
     .panel-body.text-center
       %h4{:itemprop => "name"} #{novel.name}
       %span.sub-title{:itemprop => "author"} #{novel.author}

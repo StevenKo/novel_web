@@ -33,7 +33,7 @@
           .row.pane
             .col-sm-4
               .pane_img
-                = image_tag @novel.pic , :class => "img-responsive",:itemprop => "image"
+                = image_tag @novel.pic , :class => "img-responsive",:itemprop => "image", alt: @novel.name
             .col-sm-8
               .pane_detail
                 %h4.title.title_book{:itemprop => "name"} #{@novel.name}
