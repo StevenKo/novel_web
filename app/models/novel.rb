@@ -1,11 +1,18 @@
 class Novel < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :history]
+  friendly_id :slug_candidates, use: [:slugged, :history]
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize.to_s
   end
-  
+
+  def slug_candidates
+    [
+      :name,
+      [:name, :author],
+    ]
+  end
+
   belongs_to :category
   has_many :articles
 
