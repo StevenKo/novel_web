@@ -13,14 +13,18 @@
       = render 'shared/sidebar_bookview', novel_articles: @novel_articles, novel: @novel, article_id: @article.id
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
-          %li
-            = link_to "首頁", root_path
-          %li
-            = link_to @novel.category.name, category_path(@novel.category)
-          %li
-            = link_to @novel.name, category_novel_path(@novel.category,@novel)
-          %li.active
-            = link_to @article.subject + " :"+@article.title, novel_article_path(@novel,@article)
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to root_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 首頁
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to category_path(@novel.category),:itemprop => "url" do
+              %span{:itemprop => "title"} #{@novel.category.name}
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to category_novel_path(@novel.category,@novel),:itemprop => "url" do
+              %span{:itemprop => "title"} #{@novel.name}
+          %li.active{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to novel_article_path(@novel,@article),:itemprop => "url" do
+              %span{:itemprop => "title"} #{@article.subject + " :"+@article.title}
         .content
           .book-view
             .book-view_tool-bar

@@ -12,23 +12,27 @@
       = render 'shared/sidebar'
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
-          %li
-            = link_to "首頁", root_path
-          %li
-            = link_to @category.name, category_path(@category)
-          %li
-            = link_to @novel.name, category_novel_path(@category,@novel)
-        .content
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to root_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 首頁
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to category_path(@category),:itemprop => "url" do
+              %span{:itemprop => "title"} #{@category.name}
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to category_novel_path(@category,@novel),:itemprop => "url" do
+              %span{:itemprop => "title"} #{@novel.name}
+              
+        .content{:itemscope => "", :itemtype => "http://schema.org/Book"}
           .row.pane
             .col-sm-4
               .pane_img
-                = image_tag @novel.pic , :class => "img-responsive"
+                = image_tag @novel.pic , :class => "img-responsive",:itemprop => "image"
             .col-sm-8
               .pane_detail
-                %h4.title.title_book #{@novel.name}
-                %p #{@novel.description}
+                %h4.title.title_book{:itemprop => "name"} #{@novel.name}
+                %p{:itemprop => "description"} #{@novel.description}
                 %hr
-                %button.btn.btn-default.btn-sm(type="button")
+                %button.btn.btn-default.btn-sm(type="button"){:itemprop => "author"}
                   %i.fa.fa-user.fa-fw 
                   #{@novel.author}
                 %button.btn.btn-info.btn-sm(type="button")

@@ -12,13 +12,16 @@
       = render 'shared/sidebar'
       %section.right-wrapper.full.col-xs-12.col-sm-10
         %ol.breadcrumb.row.full
-          %li
-            = link_to "首頁", root_path
-          %li
-            = link_to "推薦熱門小說", recommend_path
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to root_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 首頁
+          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+            = link_to recommend_path,:itemprop => "url" do
+              %span{:itemprop => "title"} 推薦熱門小說
           - if @category
-            %li
-              = link_to @category.name, recommend_path(@category)
+            %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+              = link_to recommend_path(@category),:itemprop => "url" do
+                %span{:itemprop => "title"} #{@category.name}
         .content
           .content-body
             .row

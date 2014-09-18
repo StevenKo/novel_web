@@ -19,32 +19,32 @@
       .row
         .col-md-5
           %h3.title.title_panel 推薦小說
-          .row
+          .row{:itemscope => "", :itemtype => "http://schema.org/Book"}
             .col-sm-4
               .pane_img
-                = image_tag @recommend_novel.pic, :class => "img-responsive"
+                = image_tag @recommend_novel.pic, :class => "img-responsive",:itemprop => "image"
             .col-sm-8
               .pane_detail
-                %h4.title.title_book #{@recommend_novel.name}
-                %p.desc #{@recommend_novel.description}
+                %h4.title.title_book{:itemprop => "name"} #{@recommend_novel.name}
+                %p.desc{:itemprop => "description"} #{@recommend_novel.description}
                 %br
                 %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
-                = link_to category_novel_path(@recommend_novel.category,@recommend_novel), class: "btn btn-default btn-sm" do
+                = link_to category_novel_path(@recommend_novel.category,@recommend_novel), class: "btn btn-default btn-sm",:itemprop => "url" do
                   詳情
                   %i.fa.fa-long-arrow-right
         .col-md-5
           %h3.title.title_panel 最新小說
-          .row
+          .row{:itemscope => "", :itemtype => "http://schema.org/Book"}
             .col-sm-4
               .pane_img
-                = image_tag @newest_novel.pic , :class => "img-responsive"
+                = image_tag @newest_novel.pic , :class => "img-responsive",:itemprop => "image"
             .col-sm-8
               .pane_detail
-                %h4.title.title_book #{@newest_novel.name}
-                %p.desc #{@newest_novel.description}
+                %h4.title.title_book{:itemprop => "name"} #{@newest_novel.name}
+                %p.desc{:itemprop => "description"} #{@newest_novel.description}
                 %br
                 %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
-                = link_to category_novel_path(@newest_novel.category,@newest_novel), class: "btn btn-default btn-sm" do
+                = link_to category_novel_path(@newest_novel.category,@newest_novel), class: "btn btn-default btn-sm",:itemprop => "url" do
                   詳情
                   %i.fa.fa-long-arrow-right
 

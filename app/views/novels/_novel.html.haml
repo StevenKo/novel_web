@@ -1,7 +1,8 @@
-.box_item
+.box_item{:itemscope => "", :itemtype => "http://schema.org/Book"}
   .box_img
-    = link_to (image_tag novel.pic, :class => "img-responsive"), category_novel_path(novel.category,novel)
+    = link_to (image_tag novel.pic, :class => "img-responsive", :itemprop => "image"), category_novel_path(novel.category,novel),:itemprop => "url"
   .box_detail
     %h5.title
-      = link_to novel.name, category_novel_path(novel.category,novel)
-    %h6.author #{novel.author}
+      = link_to category_novel_path(novel.category,novel) do
+        %span{:itemprop => "name"} #{novel.name}
+    %h6.author{:itemprop => "author"} #{novel.author}
