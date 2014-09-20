@@ -1,0 +1,42 @@
+#push-container 
+
+  = render 'partial/header'
+
+  %section#page.single-page.login-page
+
+    .container
+      .inner
+        .panel.form-wrapper
+          .panel-body
+            .row
+              .col-sm-6
+                .inner
+                  %form(role="form")
+                    .form-group
+                      %label.sr-only(for="") 暱稱
+                      %input.form-control(type="text" placeholder="用戶帳號")
+                    .form-group
+                      %label.sr-only(for="") 密碼
+                      %input.form-control(type="text" placeholder="密碼")
+              .col-sm-6
+                .inner
+                  %form(role="form")
+                    .form-group
+                      %label.sr-only(for="") Email
+                      %input.form-control(type="email" placeholder="電子郵件")
+                    .form-group
+                      %label.sr-only(for="") 密碼
+                      %input.form-control(type="text" placeholder="確認密碼")
+              .col-sm-12
+                .col-xs-8
+                  %small 密碼長度必須多餘8個字元
+                .col-xs-4
+                  %button.btn.btn-primary.btn-block(type="button") 註冊
+          .panel-footer.text-center
+            .inner
+              已經有帳號了，
+              %a{:href => "/"}馬上登入
+
+  = render 'partial/footer'
+
+= render 'partial/mobile'

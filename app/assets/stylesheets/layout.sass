@@ -141,7 +141,23 @@ $mobile-bg : #333
 .right-wrapper
   position: relative
   background-color: $bg-color
+  min-height: 500px
   +full(right,$bg-color)
+
+.single-page
+  background-color: #E8F1F3
+
+.login-page
+  background-color: #82B6C2
+
+.form-wrapper
+  max-width: 600px
+  margin: 6% auto
+  &.panel
+    border: 10px solid lighten(#82B6C2, 5%)
+  .panel-footer
+    a
+      color: #82B6C2
 
 .content
   @media only screen and (min-width : 992px)

@@ -1,0 +1,45 @@
+#push-container 
+
+  = render 'partial/header'
+
+  %section#page.single-page.login-page
+
+    .container
+      .inner
+        .panel.form-wrapper
+          .panel-body
+            .row
+              .col-sm-6
+                .inner
+                  %form(role="form")
+                    .form-group
+                      %label.sr-only(for="") 帳號
+                      %input.form-control(type="text" placeholder="用戶帳號")
+                    .form-group
+                      %label.sr-only(for="") 密碼
+                      %input.form-control(type="password" placeholder="密碼")
+                    .checkbox
+                      %label
+                        %input#check-1(type="checkbox") 記住我
+                        %label(for="check-1")
+                    %button.btn.btn-info.btn-block(type="button") 登入
+              .col-sm-6.left-line
+                .inner
+                  %p.desc.text-center 或者你可以利用以下帳號登入
+                  %br
+                  %button.btn.btn-block.btn-icon.facebook-btn(type="button") 
+                    %span.fa.fa-facebook.icon
+                    Facebook
+                  %button.btn.btn-block.btn-icon.google-btn(type="button") 
+                    %span.fa.fa-google-plus.icon
+                    Google +
+          .panel-footer
+            .inner
+              %a{:href => "/"} 忘記密碼
+              %span.pull-right 
+                還沒有帳號？
+                %a{:href => "/"}馬上註冊
+
+  = render 'partial/footer'
+
+= render 'partial/mobile'
