@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :articles, only: ['show']
   end
 
+  resources :authors, only: ["show"]
+
   get 'search', to: 'novels#search'
 
 end
