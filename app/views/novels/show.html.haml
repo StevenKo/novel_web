@@ -39,12 +39,14 @@
                 %h4.title.title_book{:itemprop => "name"} #{@novel.name}
                 %p{:itemprop => "description"} #{@novel.description}
                 %hr
-                %button.btn.btn-default.btn-sm(type="button"){:itemprop => "author"}
+                = link_to author_path(@novel.author), class: "btn btn-default btn-sm",:itemprop => "author" do
                   %i.fa.fa-user.fa-fw 
                   #{@novel.author}
-                %button.btn.btn-info.btn-sm(type="button")
+
+                = link_to novel_article_path(@novel,@articles[0].first), class: "btn btn-default btn-sm" do
                   %i.fa.fa-plus.fa-fw 
                   點擊閱讀
+
           .content-body
             %hr
             .row

@@ -43,7 +43,7 @@ $ ->
         $this = $(this)
         $this.html('<img src="' + $gif + '" alt="Loading..." title="Loading..." />').addClass('disabled')
         $.getScript more_posts_url, ->
-          $this.text('More posts').removeClass('disabled') if $this
+          $this.text('更多小說').removeClass('disabled') if $this
           pushPage(more_posts_url.match(page_regexp)[0])
           loading_posts = false
       return

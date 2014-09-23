@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'download', to: 'welcome#download'
   get 'apply-writer', to: 'welcome#apply'
   post 'apply-writer', to: 'welcome#apply_create'
+  get 'top', to: 'welcome#top'
 
   get 'categories/recommend(/:category)', to: 'categories#recommend', as: 'recommend'
   get 'categories/recent', to: 'categories#recent', as: 'recent'
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   resources :novels, only: [] do
     resources :articles, only: ['show']
   end
+
+  resources :authors, only: ["show"]
 
   get 'search', to: 'novels#search'
 

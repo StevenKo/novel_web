@@ -1,0 +1,10 @@
+%li.list-group-item.media-item
+  = link_to "",category_novel_path(novel.category,novel), class: "media-link"
+  %span.number #{novel_counter + 1}
+  .media-small
+    = image_tag novel.pic, :class => "img-responsive"
+    %i.fa.fa-fw.fa-book
+  .box_detail
+    %h5.title
+      = link_to novel.name, category_novel_path(novel.category,novel)
+    %h6.author #{novel.author}
