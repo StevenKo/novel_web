@@ -22,6 +22,17 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def top
+    hot_novels_id = HotShip.all.map{|ship| ship.novel_id}.join(',')
+    @hot_novels = Novel.where("id in (#{hot_novels_id})").show.select("id,name,author,pic,category_id,slug").order("updated_at DESC").limit(30)
+
+    this_week_novels_id = ThisWeekHotShip.all.map{|ship| ship.novel_id}.join(',')
+    @week_novels = Novel.where("id in (#{this_week_novels_id})").show.select("id,name,author,pic,category_id,slug").order("updated_at DESC").limit(30)
+
+    this_month_novels_id = ThisMonthHotShip.all.map{|ship| ship.novel_id}.join(',')
+    @month_novels = Novel.where("id in (#{this_month_novels_id})").show.select("id,name,author,pic,category_id,slug").order("updated_at DESC").limit(30)
+  end
+
   private
 
   def writer_params

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'download', to: 'welcome#download'
   get 'apply-writer', to: 'welcome#apply'
   post 'apply-writer', to: 'welcome#apply_create'
+  get 'top', to: 'welcome#top'
 
   get 'categories/recommend(/:category)', to: 'categories#recommend', as: 'recommend'
   get 'categories/recent', to: 'categories#recent', as: 'recent'

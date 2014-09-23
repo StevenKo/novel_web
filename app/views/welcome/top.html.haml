@@ -1,0 +1,33 @@
+#push-container 
+
+  = render 'shared/header'
+
+  %section#page.dark-bg
+    .container
+      = render 'shared/sidebar'
+      %section.right-wrapper.full.col-xs-12.col-sm-10
+        %ol.breadcrumb.row.full
+          %li
+            %a{:href => "/"} 首頁
+          %li
+            = link_to "小說排行", top_path
+        .content
+          .row
+            .col-md-4
+              %h2.title.title_book 熱門小說
+              %ul.list-group
+                = render partial: 'novels/novel_for_top', collection: @hot_novels, as: :novel
+
+            .col-md-4
+              %h2.title.title_book 本月推薦
+              %ul.list-group
+                = render partial: 'novels/novel_for_top', collection: @week_novels, as: :novel
+
+            .col-md-4
+              %h2.title.title_book 本週排行
+              %ul.list-group
+                = render partial: 'novels/novel_for_top', collection: @month_novels, as: :novel
+
+  = render 'shared/footer'
+
+= render 'shared/mobile'
