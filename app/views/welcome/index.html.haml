@@ -33,7 +33,9 @@
                 %h4.title.title_book{:itemprop => "name"} #{@recommend_novel.name}
                 %p.desc{:itemprop => "description"} #{@recommend_novel.description}
                 %br
-                %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
+                = link_to novel_article_path(@recommend_novel,@recommend_novel.articles.first), class: "btn btn-info btn-sm" do
+                  馬上閱讀
+
                 = link_to category_novel_path(@recommend_novel.category,@recommend_novel), class: "btn btn-default btn-sm",:itemprop => "url" do
                   詳情
                   %i.fa.fa-long-arrow-right
@@ -48,7 +50,8 @@
                 %h4.title.title_book{:itemprop => "name"} #{@newest_novel.name}
                 %p.desc{:itemprop => "description"} #{@newest_novel.description}
                 %br
-                %button.btn.btn-info.btn-sm(type="button") 馬上閱讀
+                = link_to novel_article_path(@newest_novel,@newest_novel.articles.first), class: "btn btn-info btn-sm" do
+                  馬上閱讀
                 = link_to category_novel_path(@newest_novel.category,@newest_novel), class: "btn btn-default btn-sm",:itemprop => "url" do
                   詳情
                   %i.fa.fa-long-arrow-right
