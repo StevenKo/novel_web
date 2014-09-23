@@ -28,8 +28,8 @@
                 %span{:itemprop => "title"} #{@category.name}
         .content
           .content-body
-            .row
-              = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
+            .box_wrapper
+              = render @novels
 
   = render 'shared/footer'
 

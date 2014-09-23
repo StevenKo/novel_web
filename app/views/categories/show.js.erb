@@ -1,17 +1,16 @@
-$container = $('.content-body .row');
-$container.append('<%= j render partial: "novels/novel_for_category", collection: @novels, as: :novel %>').masonry( 'reloadItems' );
+$container = $('.box_wrapper');
+$container.append('<%= j render @novels %>').masonry( 'reloadItems' );
 
 reload_masonry = function() {
   $container.imagesLoaded(function() {
     $container.masonry({
-      itemSelector: '#marsony-item'
+      itemSelector: ".box_item"
     });
   });
 };
 
-window.setTimeout(reload_masonry, 100);
-window.setTimeout(reload_masonry, 500);
 
+window.setTimeout(reload_masonry, 100);
 
 <% if @novels.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @novels %>');

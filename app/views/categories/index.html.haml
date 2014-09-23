@@ -24,8 +24,8 @@
               %span{:itemprop => "title"} 全部分類
         .content
           .content-body
-            .row
-              = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
+            .box_wrapper
+              = render @novels
         #with-button
           = will_paginate @novels
 

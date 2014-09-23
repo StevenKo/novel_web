@@ -24,8 +24,8 @@
             
         .content
           .content-body
-            .row
-              = render partial: 'novels/novel_for_category', collection: @novels, as: :novel
+            .box_wrapper
+              = render @novels
 
         #infinite-scrolling.center-div
           = will_paginate @novels
