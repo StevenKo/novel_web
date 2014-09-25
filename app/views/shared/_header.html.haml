@@ -11,17 +11,7 @@
           %i.fa.fa-bars.fa-fw
     %nav.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.index-nav
-          = link_to "首頁", root_path
-        %li
-          = link_to "小說分類", categories_path
-        %li
-          = link_to "排行榜", top_path
         %li
           = link_to "下載APP", download_path
         %li.apply-nav
           = link_to "我要投稿", apply_writer_path
-      %div.nav.navbar-nav.navbar-right
-        = form_for '',url: search_path,html: {class: "navbar-form navbar-left", role: 'search'}, method: :get do |f|
-          .form-group
-            = f.text_field :keyword, placeholder: "搜尋小說名字或作者", class: "form-control"
